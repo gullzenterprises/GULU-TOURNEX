@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GULU TOURNEX — Demo Prototype</title>
+<meta name="description" content="GULU TOURNEX demo prototype">
+<style>
+:root{
+  --bg:#07090d;
+  --panel:#0d1118;
+  --panel2:#111722;
+  --line:#202938;
+  --text:#f5f7fb;
+  --muted:#8e9aae;
+  --accent:#7c5cff;
+  --accent2:#a58cff;
+  --green:#32d583;
+  --yellow:#f5c451;
+  --red:#ff667d;
+  --shadow:0 24px 80px rgba(0,0,0,.35);
+  --radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 10% 0%,rgba(124,92,255,.18),transparent 30%),
+    radial-gradient(circle at 90% 10%,rgba(42,202,255,.10),transparent 28%),
+    var(--bg);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.container{width:min(1160px,calc(100% - 36px));margin:auto}
+.topbar{
+  position:sticky;top:0;z-index:30;
+  backdrop-filter:blur(18px);
+  background:rgba(7,9,13,.72);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.5px}
+.brand-mark{
+  width:38px;height:38px;border-radius:12px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--accent),#21c7ff);
+  box-shadow:0 10px 35px rgba(124,92,255,.32);font-size:15px
+}
+.brand small{display:block;color:var(--muted);font-size:10px;font-weight:700;letter-spacing:1.8px}
+.navlinks{display:flex;gap:6px;align-items:center}
+.navlinks a{padding:10px 13px;border-radius:12px;color:#c4cada;font-size:14px}
+.navlinks a:hover{background:#111722;color:#fff}
+.nav-actions{display:flex;gap:8px}
+.btn{
+  border:1px solid var(--line);background:#111722;color:#f6f7fb;
+  padding:11px 15px;border-radius:12px;font-weight:800;font-size:13px;
+}
+.btn:hover{border-color:#354054;background:#151c28}
+.btn.primary{
+  border-color:transparent;
+  background:linear-gradient(135deg,var(--accent),#5c7cff);
+  box-shadow:0 12px 30px rgba(124,92,255,.24)
+}
+.btn.ghost{background:transparent}
+.mobile-toggle{display:none}
+
+.hero{padding:68px 0 38px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center}
+.eyebrow{
+  display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(124,92,255,.32);
+  background:rgba(124,92,255,.08);color:#c9c0ff;padding:8px 11px;border-radius:999px;
+  font-size:11px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase
+}
+.dot{width:7px;height:7px;border-radius:50%;background:#6fffb1;box-shadow:0 0 16px #6fffb1}
+h1{font-size:clamp(44px,7vw,78px);line-height:.95;margin:18px 0 18px;letter-spacing:-3px}
+.hero p{max-width:680px;color:#a5afbf;font-size:18px;line-height:1.7;margin:0}
+.hero-cta{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+.hero-note{margin-top:17px;color:#68748a;font-size:12px}
+.preview{
+  border:1px solid var(--line);border-radius:26px;background:linear-gradient(180deg,#111721,#0b0f15);
+  box-shadow:var(--shadow);overflow:hidden
+}
+.preview-top{padding:12px 14px;border-bottom:1px solid var(--line);display:flex;gap:7px;align-items:center}
+.window-dot{width:9px;height:9px;border-radius:50%;background:#30394a}
+.preview-body{padding:16px}
+.mini-header{display:flex;justify-content:space-between;align-items:center;gap:15px}
+.mini-badge{padding:6px 9px;border-radius:999px;background:rgba(50,213,131,.08);color:#82efb2;font-size:10px;font-weight:900}
+.mini-title{font-size:22px;font-weight:900;margin:14px 0 8px}
+.mini-sub{font-size:12px;color:var(--muted);line-height:1.5}
+.mock-tile{margin-top:14px;padding:14px;border:1px solid var(--line);border-radius:16px;background:#0f141d}
+.row{display:flex;justify-content:space-between;gap:10px}
+.stat{font-size:12px;color:#9eabbe}.value{font-size:18px;font-weight:900;margin-top:4px}
+.mock-bar{height:8px;background:#1a2230;border-radius:999px;overflow:hidden;margin-top:14px}
+.mock-fill{height:100%;width:68%;background:linear-gradient(90deg,var(--accent),#4ed8ff)}
+.mock-action{margin-top:14px;display:flex;justify-content:space-between;align-items:center}
+.fake-chip{font-size:10px;font-weight:900;padding:6px 8px;background:#151c28;border-radius:8px;color:#b7c3d5}
+
+.section{padding:30px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:18px}
+.section-head h2{margin:0;font-size:28px;letter-spacing:-1px}
+.section-head p{margin:0;color:var(--muted);font-size:13px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{
+  border:1px solid var(--line);border-radius:var(--radius);background:rgba(13,17,24,.88);
+  padding:18px;box-shadow:0 14px 45px rgba(0,0,0,.12)
+}
+.tournament-card{position:relative;overflow:hidden}
+.cover{
+  height:132px;border-radius:15px;background:
+  linear-gradient(120deg,rgba(124,92,255,.85),rgba(29,39,58,.1)),
+  linear-gradient(0deg,#151b24,#223049);
+  display:flex;align-items:flex-end;padding:15px;position:relative
+}
+.cover::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,.12),transparent 28%)}
+.game-tag{position:relative;z-index:1;font-size:10px;padding:6px 8px;border-radius:8px;background:rgba(0,0,0,.34);font-weight:900}
+.t-name{font-size:18px;font-weight:900;margin:14px 0 7px}
+.meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.meta-item span{display:block;color:#6f7b8f;font-size:10px;text-transform:uppercase;letter-spacing:1px}
+.meta-item strong{display:block;margin-top:4px;font-size:13px}
+.card-actions{display:flex;gap:8px}
+.card-actions .btn{flex:1}
+.live{color:#8ef2b8}.hot{color:#ffc96b}.closed{color:#ff7b8d}
+
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.big-stat{padding:18px;border:1px solid var(--line);border-radius:18px;background:#0c1017}
+.big-stat .icon{width:36px;height:36px;border-radius:11px;background:#141b27;display:grid;place-items:center;font-size:15px}
+.big-stat strong{display:block;font-size:25px;margin-top:13px}
+.big-stat span{display:block;color:var(--muted);font-size:11px;margin-top:4px}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.feature-list{display:grid;gap:11px;margin-top:15px}
+.feature{
+  display:flex;gap:11px;align-items:flex-start;padding:12px;border-radius:14px;background:#0d131c;border:1px solid #151d29
+}
+.feature-icon{width:30px;height:30px;border-radius:9px;background:#171f2d;display:grid;place-items:center;font-size:13px;flex:0 0 auto}
+.feature strong{font-size:13px}.feature p{margin:4px 0 0;color:#7f8a9c;font-size:11px;line-height:1.45}
+
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.flow-step{padding:16px;border:1px solid var(--line);border-radius:16px;background:#0c1118;min-height:126px}
+.step-no{color:#917cff;font-size:11px;font-weight:900;letter-spacing:1px}
+.flow-step h3{font-size:14px;margin:10px 0 5px}.flow-step p{font-size:11px;color:var(--muted);line-height:1.45;margin:0}
+
+.tabs{display:flex;gap:7px;flex-wrap:wrap}
+.tab{padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:#0c1118;color:#9eabbe;font-weight:800;font-size:12px}
+.tab.active{background:rgba(124,92,255,.13);color:#cfc7ff;border-color:rgba(124,92,255,.35)}
+.tab-panel{margin-top:14px}
+.persona-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+
+.notice{
+  padding:14px;border-radius:15px;border:1px dashed #364052;background:#0c1117;color:#96a2b6;font-size:12px;line-height:1.6
+}
+.code-box{
+  margin-top:12px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  border:1px solid #3b4a68;border-radius:15px;background:#0b111a;padding:14px
+}
+.code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:16px;font-weight:900;letter-spacing:2px}
+
+.footer{margin-top:28px;padding:35px 0 55px;border-top:1px solid var(--line)}
+.footer-grid{display:flex;justify-content:space-between;gap:20px;align-items:end}
+.footer p{margin:5px 0 0;color:#69768a;font-size:12px}
+
+.modal-wrap{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.7);z-index:100}
+.modal-wrap.show{display:flex}
+.modal{
+  width:min(520px,100%);background:#0d121a;border:1px solid #293344;border-radius:22px;
+  box-shadow:0 35px 100px rgba(0,0,0,.55);overflow:hidden
+}
+.modal-head{display:flex;justify-content:space-between;gap:15px;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
+.modal-head h3{margin:0;font-size:16px}
+.close{border:0;background:#171f2b;color:#aab5c4;width:32px;height:32px;border-radius:10px}
+.modal-body{padding:20px}
+.form-grid{display:grid;gap:12px}
+label{display:block;font-size:11px;color:#77859a;margin-bottom:5px}
+input,select{
+  width:100%;border:1px solid var(--line);background:#0a0f15;color:#f3f5f9;
+  padding:12px;border-radius:11px;outline:none
+}
+input:focus,select:focus{border-color:#5763ff}
+.form-actions{display:flex;gap:8px;margin-top:15px}
+.form-actions .btn{flex:1}
+
+@media (max-width: 980px){
+  .hero-grid{grid-template-columns:1fr}
+  .grid-3,.persona-grid{grid-template-columns:1fr 1fr}
+  .flow{grid-template-columns:1fr 1fr}
+}
+@media (max-width: 720px){
+  .navlinks{display:none}
+  .mobile-toggle{display:block;border:1px solid var(--line);background:#0f151f;color:#fff;padding:10px 11px;border-radius:11px}
+  .navlinks.open{display:flex;position:absolute;top:74px;left:18px;right:18px;flex-direction:column;align-items:stretch;padding:10px;background:#0d1219;border:1px solid var(--line);border-radius:16px}
+  .navlinks.open a{padding:12px}
+  .nav-actions{display:none}
+  .hero{padding-top:48px}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .two-col{grid-template-columns:1fr}
+  .grid-3,.persona-grid{grid-template-columns:1fr}
+  .footer-grid{flex-direction:column;align-items:flex-start}
+}
+@media (max-width: 430px){
+  .container{width:min(100% - 24px,1160px)}
+  h1{letter-spacing:-2px}
+  .stats-row{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="#home">
+      <div class="brand-mark">GT</div>
+      <div>
+        <div>GULU TOURNEX</div>
+        <small>TOURNAMENT ECOSYSTEM</small>
+      </div>
+    </a>
+    <nav class="navlinks" id="navlinks">
+      <a href="#tournaments">Tournaments</a>
+      <a href="#how">How It Works</a>
+      <a href="#roles">Platform</a>
+      <a href="#organizer">Organizer</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn ghost" onclick="openModal('login')">Login</button>
+      <button class="btn primary" onclick="openModal('signup')">Create Account</button>
+    </div>
+    <button class="mobile-toggle" onclick="toggleNav()">☰</button>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow"><span class="dot"></span> Demo Prototype · Phase 1</span>
+      <h1>Play.<br>Book.<br><span style="background:linear-gradient(90deg,#a897ff,#66e3ff);-webkit-background-clip:text;background-clip:text;color:transparent">Show Up.</span></h1>
+      <p>
+        GULU TOURNEX is being designed as a professional tournament platform where players,
+        organizers and verification staff can work through one connected web experience.
+      </p>
+      <div class="hero-cta">
+        <button class="btn primary" onclick="document.getElementById('tournaments').scrollIntoView()">Explore Tournaments</button>
+        <button class="btn" onclick="openModal('organizer')">Host a Tournament</button>
+      </div>
+      <div class="hero-note">This demo is visual only. Payments, databases and real verification are not connected yet.</div>
+    </div>
+
+    <div class="preview">
+      <div class="preview-top">
+        <span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span>
+        <span style="margin-left:auto;color:#607087;font-size:10px">gulutournex / demo</span>
+      </div>
+      <div class="preview-body">
+        <div class="mini-header">
+          <div>
+            <div style="font-size:10px;color:#758399">FEATURED</div>
+            <div class="mini-title">GULU NIGHT CLASH</div>
+          </div>
+          <div class="mini-badge">REGISTRATION OPEN</div>
+        </div>
+        <div class="mini-sub">Free Fire · Solo · Ahmedabad · Offline Final</div>
+        <div class="mock-tile">
+          <div class="row">
+            <div><div class="stat">PRIZE POOL</div><div class="value">₹25,000</div></div>
+            <div style="text-align:right"><div class="stat">ENTRY</div><div class="value">₹99</div></div>
+          </div>
+          <div class="mock-bar"><div class="mock-fill"></div></div>
+          <div class="mock-action">
+            <span class="fake-chip">68 / 100 SLOTS</span>
+            <button class="btn primary" onclick="openBooking('GULU NIGHT CLASH')">Book Spot</button>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
+          <div class="mock-tile"><div class="stat">STARTS IN</div><div style="font-weight:900;margin-top:5px">02d 06h 18m</div></div>
+          <div class="mock-tile"><div class="stat">VENUE</div><div style="font-weight:900;margin-top:5px">Ahmedabad</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="stats-row">
+      <div class="big-stat"><div class="icon">◈</div><strong>1,248</strong><span>Demo tournament listings</span></div>
+      <div class="big-stat"><div class="icon">◫</div><strong>18,420</strong><span>Demo player registrations</span></div>
+      <div class="big-stat"><div class="icon">✓</div><strong>97.8%</strong><span>Demo check-in success</span></div>
+      <div class="big-stat"><div class="icon">₹</div><strong>₹4.8L</strong><span>Demo prize flow</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tournaments">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Discover tournaments</h2>
+        <p>Example cards showing what the public marketplace could look like.</p>
+      </div>
+      <div class="tabs">
+        <button class="tab active">All</button>
+        <button class="tab">Nearby</button>
+        <button class="tab">Popular</button>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <article class="card tournament-card">
+        <div class="cover"><span class="game-tag">FREE FIRE · SOLO</span></div>
+        <div class="t-name">GULU NIGHT CLASH</div>
+        <div style="font-size:12px;color:var(--muted)">Fast-paced offline tournament with live staff verification.</div>
+        <div class="meta">
+          <div class="meta-item"><span>Prize Pool</span><strong>₹25,000</strong></div>
+          <div class="meta-item"><span>Entry</span><strong>₹99</strong></div>
+          <div class="meta-item"><span>Location</span><strong>Ahmedabad</strong></div>
+          <div class="meta-item"><span>Status</span><strong class="live">Open</strong></div>
+        </div>
+        <div class="card-actions">
+          <button class="btn" onclick="openDetails('GULU NIGHT CLASH')">Details</button>
+          <button class="btn primary" onclick="openBooking('GULU NIGHT CLASH')">Book</button>
+        </div>
+      </article>
+
+      <article class="card tournament-card">
+        <div class="cover" style="background:linear-gradient(120deg,rgba(44,196,255,.65),rgba(20,29,43,.2)),linear-gradient(0deg,#121923,#21354a)"><span class="game-tag">BGMI · SQUAD</span></div>
+        <div class="t-name">TOURNEX SQUAD WARS</div>
+        <div style="font-size:12px;color:var(--muted)">Team event with an organizer-managed offline final.</div>
+        <div class="meta">
+          <div class="meta-item"><span>Prize Pool</span><strong>₹50,000</strong></div>
+          <div class="meta-item"><span>Entry</span><strong>₹199</strong></div>
+          <div class="meta-item"><span>Location</span><strong>Surat</strong></div>
+          <div class="meta-item"><span>Status</span><strong class="hot">Filling fast</strong></div>
+        </div>
+        <div class="card-actions">
+          <button class="btn" onclick="openDetails('TOURNEX SQUAD WARS')">Details</button>
+          <button class="btn primary" onclick="openBooking('TOURNEX SQUAD WARS')">Book</button>
+        </div>
+      </article>
+
+      <article class="card tournament-card">
+        <div class="cover" style="background:linear-gradient(120deg,rgba(255,93,125,.55),rgba(31,23,37,.2)),linear-gradient(0deg,#17131a,#402b3a)"><span class="game-tag">VALORANT · 5v5</span></div>
+        <div class="t-name">TOURNEX ARENA CUP</div>
+        <div style="font-size:12px;color:var(--muted)">Weekend bracket with organizer dashboard and team check-ins.</div>
+        <div class="meta">
+          <div class="meta-item"><span>Prize Pool</span><strong>₹1,00,000</strong></div>
+          <div class="meta-item"><span>Entry</span><strong>₹499</strong></div>
+          <div class="meta-item"><span>Location</span><strong>Vadodara</strong></div>
+          <div class="meta-item"><span>Status</span><strong class="closed">Sold out</strong></div>
+        </div>
+        <div class="card-actions">
+          <button class="btn" onclick="openDetails('TOURNEX ARENA CUP')">Details</button>
+          <button class="btn" disabled style="opacity:.55;cursor:not-allowed">Closed</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>The core flow</h2>
+        <p>Only a visual demonstration for now.</p>
+      </div>
+    </div>
+    <div class="flow">
+      <div class="flow-step"><div class="step-no">01</div><h3>Discover</h3><p>Player finds a tournament, reads details, rules and venue information.</p></div>
+      <div class="flow-step"><div class="step-no">02</div><h3>Book</h3><p>Player submits details and completes a demo booking flow.</p></div>
+      <div class="flow-step"><div class="step-no">03</div><h3>Entry Pass</h3><p>System conceptually generates a unique 12-character participation code.</p></div>
+      <div class="flow-step"><div class="step-no">04</div><h3>Check-in</h3><p>Staff enters/scans the pass and sees the current verification result.</p></div>
+      <div class="flow-step"><div class="step-no">05</div><h3>Results</h3><p>Future versions can connect results, prize claims and withdrawal workflows.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="roles">
+  <div class="container">
+    <div class="two-col">
+      <div class="card">
+        <div class="eyebrow" style="font-size:9px">PLAYER SIDE</div>
+        <h2 style="margin:15px 0 7px;font-size:24px">A simple player journey</h2>
+        <p style="margin:0;color:var(--muted);font-size:12px;line-height:1.7">The future player dashboard can keep every registration, pass and result in one place.</p>
+        <div class="feature-list">
+          <div class="feature"><div class="feature-icon">1</div><div><strong>My tournaments</strong><p>Upcoming, completed and cancelled bookings.</p></div></div>
+          <div class="feature"><div class="feature-icon">2</div><div><strong>Digital entry pass</strong><p>Code, QR, tournament, venue and schedule in one view.</p></div></div>
+          <div class="feature"><div class="feature-icon">3</div><div><strong>Prize area</strong><p>Future claim and withdrawal workflow after verified results.</p></div></div>
+        </div>
+      </div>
+
+      <div class="card" id="organizer">
+        <div class="eyebrow" style="font-size:9px">ORGANIZER SIDE</div>
+        <h2 style="margin:15px 0 7px;font-size:24px">Host and manage</h2>
+        <p style="margin:0;color:var(--muted);font-size:12px;line-height:1.7">The organizer dashboard is one of the major future modules of GULU TOURNEX.</p>
+        <div class="feature-list">
+          <div class="feature"><div class="feature-icon">A</div><div><strong>Create tournament</strong><p>Set title, game, slots, fee, prize structure, date and venue.</p></div></div>
+          <div class="feature"><div class="feature-icon">B</div><div><strong>Manage participants</strong><p>View registrations, payment state, check-ins and status.</p></div></div>
+          <div class="feature"><div class="feature-icon">C</div><div><strong>Settlement area</strong><p>Future platform/payment integration can manage organizer earnings.</p></div></div>
+        </div>
+        <button class="btn primary" style="margin-top:16px;width:100%" onclick="openModal('organizer')">Open Demo Organizer Form</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Verification console</h2>
+        <p>Prototype of the offline staff flow.</p>
+      </div>
+      <span class="tab">STAFF DEMO</span>
+    </div>
+    <div class="card">
+      <div class="two-col">
+        <div>
+          <label for="codeInput">Enter participation code</label>
+          <div style="display:flex;gap:8px">
+            <input id="codeInput" maxlength="12" placeholder="A7K29QX4M8P2" value="A7K29QX4M8P2" style="text-transform:uppercase">
+            <button class="btn primary" onclick="verifyCode()">Verify</button>
+          </div>
+          <div class="notice" style="margin-top:12px">
+            Demo rule: this prototype accepts the sample code
+            <strong style="color:#cfc7ff">A7K29QX4M8P2</strong>.
+            Real verification will later be handled by a secure backend.
+          </div>
+        </div>
+        <div>
+          <div style="font-size:10px;color:#6d7a90;letter-spacing:1px">VERIFICATION RESULT</div>
+          <div id="verifyResult" class="code-box">
+            <div>
+              <div style="color:#7d899d;font-size:10px">STATUS</div>
+              <div class="code" style="color:#86edb0">VALID</div>
+            </div>
+            <span class="fake-chip">UNUSED</span>
+          </div>
+          <div style="margin-top:9px;color:#738097;font-size:11px;line-height:1.5">GULU NIGHT CLASH · Player Demo User · Payment: Demo Paid</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="platform">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Future platform map</h2>
+        <p>These are modules to design later—not connected in this demo.</p>
+      </div>
+    </div>
+    <div class="persona-grid">
+      <div class="card"><div style="font-size:30px">◉</div><h3>Player</h3><p style="color:var(--muted);font-size:12px;line-height:1.6">Account, tournaments, passes, notifications, results and future rewards/withdrawals.</p></div>
+      <div class="card"><div style="font-size:30px">◇</div><h3>Organizer</h3><p style="color:var(--muted);font-size:12px;line-height:1.6">Create events, manage staff, participants, venue, results and future settlement reports.</p></div>
+      <div class="card"><div style="font-size:30px">▣</div><h3>Admin</h3><p style="color:var(--muted);font-size:12px;line-height:1.6">Verification, disputes, platform settings, payment reconciliation, reports and security controls.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="card" style="background:linear-gradient(135deg,rgba(124,92,255,.12),rgba(68,214,255,.05))">
+      <div class="section-head" style="margin:0">
+        <div>
+          <div class="eyebrow" style="font-size:9px">NEXT BUILD STAGE</div>
+          <h2 style="margin-top:14px">From demo to real system</h2>
+          <p style="max-width:700px;margin-top:6px">We can progressively replace each demo component with real frontend, backend, database, authentication, payments, staff verification, organizer tools and deployment.</p>
+        </div>
+        <button class="btn primary" onclick="alert('Next stage: real frontend structure + project architecture.')">Continue</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand"><div class="brand-mark">GT</div><div>GULU TOURNEX<small>DEMO PROTOTYPE</small></div></div>
+      <p>Phase-1 visual prototype · Not a live payment system.</p>
+    </div>
+    <div style="color:#566275;font-size:11px">© 2026 GULU TOURNEX</div>
+  </div>
+</footer>
+
+<div class="modal-wrap" id="modalWrap" onclick="backdrop(event)">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="modalTitle">Demo</h3>
+      <button class="close" onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+const sampleCode = "A7K29QX4M8P2";
+
+function toggleNav(){
+  document.getElementById('navlinks').classList.toggle('open');
+}
+function closeModal(){
+  document.getElementById('modalWrap').classList.remove('show');
+}
+function backdrop(e){
+  if(e.target.id==='modalWrap') closeModal();
+}
+function openBooking(tournament){
+  document.getElementById('modalTitle').textContent = "Book " + tournament;
+  document.getElementById('modalBody').innerHTML = `
+    <div class="notice">Demo only — no real payment is processed here.</div>
+    <div class="form-grid" style="margin-top:15px">
+      <div><label>Player Name</label><input id="bookName" placeholder="Your name"></div>
+      <div><label>Mobile Number</label><input placeholder="+91 XXXXX XXXXX"></div>
+      <div><label>Game UID / ID</label><input placeholder="Enter game ID"></div>
+      <div><label>Payment Mode</label><select><option>Demo Online Payment</option><option>Demo Offline Cash</option></select></div>
+    </div>
+    <div class="form-actions">
+      <button class="btn" onclick="closeModal()">Cancel</button>
+      <button class="btn primary" onclick="showDemoPass('${tournament.replace(/'/g,"\\'")}')">Confirm Demo Booking</button>
+    </div>`;
+  document.getElementById('modalWrap').classList.add('show');
+}
+function showDemoPass(tournament){
+  document.getElementById('modalTitle').textContent = "Demo Entry Pass";
+  document.getElementById('modalBody').innerHTML = `
+    <div class="notice">This is a prototype pass. The real version will generate codes securely from the backend.</div>
+    <div class="code-box">
+      <div>
+        <div style="font-size:10px;color:#728097">PARTICIPATION CODE</div>
+        <div class="code">${sampleCode}</div>
+      </div>
+      <span class="fake-chip">DEMO</span>
+    </div>
+    <div style="margin-top:13px;font-size:12px;color:#9aa7b9;line-height:1.7">
+      <strong style="color:#f0f3f8">${tournament}</strong><br>
+      Player: Demo User<br>
+      Payment: Demo Paid<br>
+      Entry status: Ready for verification
+    </div>
+    <div class="form-actions">
+      <button class="btn" onclick="closeModal()">Close</button>
+      <button class="btn primary" onclick="closeModal();document.getElementById('platform').scrollIntoView()">View Platform Map</button>
+    </div>`;
+}
+function openDetails(tournament){
+  document.getElementById('modalTitle').textContent = tournament;
+  document.getElementById('modalBody').innerHTML = `
+    <div class="feature-list" style="margin:0">
+      <div class="feature"><div class="feature-icon">₹</div><div><strong>Entry</strong><p>Demo entry fee and prize pool.</p></div></div>
+      <div class="feature"><div class="feature-icon">◷</div><div><strong>Schedule</strong><p>Registration, start time and expected finish.</p></div></div>
+      <div class="feature"><div class="feature-icon">⌖</div><div><strong>Venue</strong><p>Offline location information for the participant.</p></div></div>
+      <div class="feature"><div class="feature-icon">✓</div><div><strong>Verification</strong><p>Demo entry-pass verification flow at the venue.</p></div></div>
+    </div>
+    <div class="form-actions">
+      <button class="btn" onclick="closeModal()">Close</button>
+      <button class="btn primary" onclick="closeModal();openBooking('${tournament.replace(/'/g,"\\'")}')">Book Demo Spot</button>
+    </div>`;
+  document.getElementById('modalWrap').classList.add('show');
+}
+function openModal(type){
+  const wrap=document.getElementById('modalWrap');
+  const title=document.getElementById('modalTitle');
+  const body=document.getElementById('modalBody');
+  if(type==='login'){
+    title.textContent='Login Demo';
+    body.innerHTML=`
+      <div class="notice">Prototype form only. Real authentication comes in a later build stage.</div>
+      <div class="form-grid" style="margin-top:15px">
+        <div><label>Email or Mobile</label><input placeholder="you@example.com"></div>
+        <div><label>Password</label><input type="password" placeholder="••••••••"></div>
+      </div>
+      <div class="form-actions"><button class="btn" onclick="closeModal()">Close</button><button class="btn primary" onclick="alert('Demo login submitted.');closeModal()">Login</button></div>`;
+  } else if(type==='signup'){
+    title.textContent='Create Account';
+    body.innerHTML=`
+      <div class="notice">Prototype account form. No information is saved.</div>
+      <div class="form-grid" style="margin-top:15px">
+        <div><label>Full Name</label><input placeholder="Your name"></div>
+        <div><label>Mobile</label><input placeholder="+91 XXXXX XXXXX"></div>
+        <div><label>Role</label><select><option>Player</option><option>Organizer</option></select></div>
+      </div>
+      <div class="form-actions"><button class="btn" onclick="closeModal()">Close</button><button class="btn primary" onclick="alert('Demo account created.');closeModal()">Create</button></div>`;
+  } else if(type==='organizer'){
+    title.textContent='Host a Tournament — Demo';
+    body.innerHTML=`
+      <div class="notice">This form previews the type of organizer onboarding we can later connect to a real database and payment flow.</div>
+      <div class="form-grid" style="margin-top:15px">
+        <div><label>Tournament Name</label><input placeholder="Enter tournament name"></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div><label>Game</label><select><option>Free Fire</option><option>BGMI</option><option>Valorant</option><option>Other</option></select></div>
+          <div><label>Entry Fee</label><input placeholder="₹"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div><label>Date</label><input type="date"></div>
+          <div><label>Start Time</label><input type="time"></div>
+        </div>
+        <div><label>Offline Address / Venue</label><input placeholder="Full tournament location"></div>
+      </div>
+      <div class="form-actions"><button class="btn" onclick="closeModal()">Close</button><button class="btn primary" onclick="alert('Demo organizer application submitted.');closeModal()">Submit Demo</button></div>`;
+  }
+  wrap.classList.add('show');
+}
+function verifyCode(){
+  const value=document.getElementById('codeInput').value.trim().toUpperCase();
+  const box=document.getElementById('verifyResult');
+  if(value===sampleCode){
+    box.innerHTML='<div><div style="color:#7d899d;font-size:10px">STATUS</div><div class="code" style="color:#86edb0">VALID</div><div style="margin-top:4px;color:#738097;font-size:10px">Demo User · GULU NIGHT CLASH</div></div><span class="fake-chip">UNUSED</span>';
+  }else{
+    box.innerHTML='<div><div style="color:#7d899d;font-size:10px">STATUS</div><div class="code" style="color:#ff7b8d">INVALID</div><div style="margin-top:4px;color:#738097;font-size:10px">Sample code does not match</div></div><span class="fake-chip">REJECT</span>';
+  }
+}
+</script>
+</body>
+</html>
