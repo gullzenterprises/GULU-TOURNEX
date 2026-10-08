@@ -1,0 +1,801 @@
+/* GULU TOURNEX home — intentionally loaded only by index.html */
+.page-home {
+  --home-glow: rgba(126, 172, 67, 0.16);
+}
+
+.page-home #main-content {
+  overflow: clip;
+}
+
+.page-home .container {
+  width: min(var(--gt-content), calc(100% - 3rem));
+  margin-inline: auto;
+}
+
+.page-home .hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(4.5rem, 9vw, 8.2rem) 0 clamp(4.2rem, 7vw, 6.5rem);
+  border-bottom: 1px solid var(--gt-line);
+  background:
+    radial-gradient(ellipse at 85% 20%, rgba(167, 212, 87, 0.2), transparent 33rem),
+    radial-gradient(ellipse at 3% 90%, rgba(45, 115, 67, 0.17), transparent 35rem),
+    linear-gradient(135deg, #0c2016 0%, #07140d 62%, #0d1d13 100%);
+}
+
+.page-home .hero::before,
+.page-home .hero::after {
+  position: absolute;
+  z-index: -1;
+  border: 1px solid rgba(194, 240, 75, 0.075);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.page-home .hero::before {
+  top: -19rem;
+  right: -7rem;
+  width: 46rem;
+  height: 46rem;
+  box-shadow: 0 0 0 3.5rem rgba(194, 240, 75, 0.018), 0 0 0 8rem rgba(194, 240, 75, 0.014);
+}
+
+.page-home .hero::after {
+  right: 5%;
+  bottom: -17rem;
+  width: 28rem;
+  height: 28rem;
+  opacity: 0.7;
+}
+
+.page-home .hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(330px, 0.92fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5.5rem);
+}
+
+.page-home .hero-grid > div:first-child {
+  position: relative;
+  z-index: 1;
+}
+
+.page-home .eyebrow,
+.page-home .section-kicker {
+  color: var(--gt-lime);
+  font-size: 0.69rem;
+  font-weight: 900;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.page-home .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.page-home .eyebrow-dot {
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 50%;
+  background: var(--gt-lime-bright);
+  box-shadow: 0 0 15px rgba(194, 240, 75, 0.8);
+}
+
+.page-home .hero h1 {
+  max-width: 760px;
+  margin: 1rem 0 1.05rem;
+  color: var(--gt-text);
+  font-size: clamp(3.2rem, 7vw, 6rem);
+  font-weight: 900;
+  letter-spacing: -0.075em;
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+.page-home .hero h1 span {
+  display: block;
+  color: var(--gt-lime);
+}
+
+.page-home .hero-copy {
+  max-width: 640px;
+  margin: 0;
+  color: #bac8bb;
+  font-size: clamp(1rem, 1.5vw, 1.13rem);
+  line-height: 1.82;
+}
+
+.page-home .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.65rem 0 1.2rem;
+}
+
+.page-home .hero-actions .button {
+  min-height: 50px;
+  padding-inline: 1.25rem;
+}
+
+.page-home .hero-note {
+  display: flex;
+  align-items: center;
+  gap: 0.68rem;
+  color: var(--gt-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+
+.page-home .hero-note-mark {
+  display: grid;
+  width: 31px;
+  height: 31px;
+  place-items: center;
+  border: 1px solid rgba(194, 240, 75, 0.16);
+  border-radius: 50%;
+  background: rgba(194, 240, 75, 0.08);
+  color: var(--gt-lime);
+}
+
+.page-home .tournament-preview {
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  padding: 0.8rem;
+  border: 1px solid rgba(207, 227, 199, 0.17);
+  border-radius: var(--gt-radius-xl);
+  background: linear-gradient(145deg, rgba(23, 50, 33, 0.9), rgba(7, 20, 12, 0.95));
+  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.43), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transform: rotate(1.2deg);
+  transition: transform 300ms ease, border-color 300ms ease;
+}
+
+.page-home .tournament-preview:hover {
+  transform: rotate(0) translateY(-3px);
+  border-color: rgba(194, 240, 75, 0.32);
+}
+
+.page-home .preview-art {
+  position: relative;
+  display: flex;
+  min-height: 230px;
+  align-items: flex-end;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 1.2rem;
+  border: 1px solid rgba(194, 240, 75, 0.1);
+  border-radius: 1.35rem;
+  background:
+    radial-gradient(circle at 70% 28%, rgba(194, 240, 75, 0.3), transparent 8rem),
+    radial-gradient(circle at 78% 75%, rgba(48, 144, 75, 0.38), transparent 12rem),
+    linear-gradient(145deg, #1c462c, #11251a 64%, #09140d);
+}
+
+.page-home .preview-art::before {
+  position: absolute;
+  top: 17%;
+  right: 10%;
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid rgba(223, 248, 180, 0.27);
+  border-radius: 50%;
+  content: "";
+  box-shadow: 0 0 0 1.3rem rgba(194, 240, 75, 0.045), 0 0 65px rgba(194, 240, 75, 0.2);
+}
+
+.page-home .preview-symbol {
+  position: absolute;
+  top: 0.8rem;
+  right: 1.3rem;
+  color: rgba(226, 247, 174, 0.7);
+  font-size: 5rem;
+  line-height: 1;
+}
+
+.page-home .preview-label {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.22rem;
+}
+
+.page-home .preview-label small {
+  color: var(--gt-lime-soft);
+  font-size: 0.61rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+}
+
+.page-home .preview-label strong {
+  color: var(--gt-text);
+  font-size: 1.2rem;
+  letter-spacing: -0.03em;
+}
+
+.page-home .preview-content {
+  padding: 1.1rem 0.65rem 0.6rem;
+}
+
+.page-home .preview-topline,
+.page-home .preview-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.page-home .preview-tag {
+  padding: 0.25rem 0.52rem;
+  border: 1px solid rgba(194, 240, 75, 0.23);
+  border-radius: 999px;
+  background: rgba(194, 240, 75, 0.08);
+  color: var(--gt-lime-soft);
+  font-size: 0.59rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+}
+
+.page-home .preview-content h2 {
+  margin: 0.8rem 0 0.18rem;
+  color: var(--gt-text);
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-weight: 850;
+  letter-spacing: -0.05em;
+}
+
+.page-home .preview-description {
+  margin: 0;
+  color: var(--gt-muted);
+  font-size: 0.78rem;
+}
+
+.page-home .preview-meta {
+  justify-content: flex-start;
+  margin-top: 1.15rem;
+  padding-top: 0.95rem;
+  border-top: 1px solid var(--gt-line);
+}
+
+.page-home .preview-meta > div {
+  display: grid;
+  gap: 0.12rem;
+}
+
+.page-home .preview-meta span {
+  color: var(--gt-muted-strong);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.page-home .preview-meta strong {
+  color: var(--gt-text-soft);
+  font-size: 0.78rem;
+}
+
+.page-home .section {
+  padding: clamp(3.5rem, 7vw, 6rem) 0;
+}
+
+.page-home .section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.4rem;
+  margin-bottom: 1.55rem;
+}
+
+.page-home .section-heading h2 {
+  margin: 0.35rem 0 0;
+  color: var(--gt-text);
+  font-size: clamp(1.85rem, 4vw, 3rem);
+  font-weight: 850;
+  letter-spacing: -0.055em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.page-home .section-heading > p {
+  max-width: 440px;
+  margin: 0;
+  color: var(--gt-muted);
+  font-size: 0.84rem;
+  line-height: 1.72;
+}
+
+.page-home .tournament-grid,
+.page-home .player-preview-grid,
+.page-home .organizer-preview-grid,
+.page-home .community-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.95rem;
+}
+
+.page-home .tournament-card,
+.page-home .community-card,
+.page-home .organizer-panel,
+.page-home .preview-feature {
+  position: relative;
+  min-width: 0;
+  padding: 1.2rem;
+  border: 1px solid var(--gt-line);
+  border-radius: var(--gt-radius-md);
+  background: linear-gradient(150deg, rgba(17, 38, 25, 0.94), rgba(8, 20, 13, 0.95));
+  transition: transform var(--gt-motion), border-color var(--gt-motion), background var(--gt-motion);
+}
+
+.page-home .tournament-card:hover,
+.page-home .community-card:hover,
+.page-home .preview-feature:hover {
+  transform: translateY(-4px);
+  border-color: rgba(194, 240, 75, 0.34);
+  background: linear-gradient(150deg, rgba(24, 49, 31, 0.96), rgba(8, 20, 13, 0.97));
+}
+
+.page-home .card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.55rem;
+  color: var(--gt-muted);
+  font-size: 0.68rem;
+}
+
+.page-home .game-mark {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(194, 240, 75, 0.3);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(194, 240, 75, 0.2), rgba(194, 240, 75, 0.07));
+  color: var(--gt-lime);
+  font-weight: 950;
+}
+
+.page-home .tournament-card h3,
+.page-home .community-card h3,
+.page-home .organizer-panel h2,
+.page-home .preview-feature h3 {
+  margin: 0.95rem 0 0.4rem;
+  color: var(--gt-text);
+  font-size: 1.08rem;
+  font-weight: 850;
+  letter-spacing: -0.025em;
+}
+
+.page-home .tournament-card p,
+.page-home .community-card p,
+.page-home .organizer-panel p,
+.page-home .preview-feature p {
+  margin: 0;
+  color: var(--gt-muted);
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+.page-home .card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  margin-top: 1rem;
+  color: var(--gt-lime-bright);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.page-home .card-link:hover {
+  gap: 0.6rem;
+}
+
+.page-home .how-section {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(3.5rem, 7vw, 6rem) 0;
+  border-block: 1px solid var(--gt-line);
+  background:
+    radial-gradient(ellipse at 2% 55%, rgba(95, 150, 61, 0.1), transparent 30rem),
+    linear-gradient(100deg, rgba(14, 34, 22, 0.9), rgba(7, 19, 12, 0.8));
+}
+
+.page-home .steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.page-home .step {
+  position: relative;
+  min-height: 185px;
+  padding: 1.2rem;
+  border: 1px solid var(--gt-line);
+  border-radius: var(--gt-radius-md);
+  background: rgba(7, 18, 11, 0.58);
+}
+
+.page-home .step-number {
+  color: var(--gt-lime);
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+}
+
+.page-home .step h3 {
+  margin: 1.35rem 0 0.45rem;
+  color: var(--gt-text);
+  font-size: 1.05rem;
+  letter-spacing: -0.025em;
+}
+
+.page-home .step p {
+  margin: 0;
+  color: var(--gt-muted);
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+.page-home .player-preview-grid,
+.page-home .organizer-preview-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.page-home .preview-feature {
+  min-height: 142px;
+}
+
+.page-home .preview-status {
+  color: var(--gt-lime);
+  font-size: 0.63rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-home .community-preview-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.page-home .community-card {
+  min-height: 175px;
+}
+
+.page-home .organizer-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-color: rgba(194, 240, 75, 0.25);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(194, 240, 75, 0.12), transparent 20rem),
+    linear-gradient(120deg, #152c1c, #0b1710);
+}
+
+.page-home .organizer-panel h2 {
+  margin-top: 0.45rem;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.page-home .organizer-panel .sample-label {
+  flex: 0 0 auto;
+}
+
+.page-home .organizer-preview-grid {
+  margin-top: 0.9rem;
+}
+
+.page-home .faq-section {
+  width: min(900px, calc(100% - 3rem));
+  margin: clamp(3.8rem, 7vw, 6rem) auto 0;
+}
+
+.page-home .faq-section .section-heading {
+  margin-bottom: 1rem;
+}
+
+.page-home .faq-section .faq-list {
+  margin-top: 0.9rem;
+}
+
+@media (max-width: 980px) {
+  .page-home .hero-grid {
+    grid-template-columns: 1fr 0.9fr;
+    gap: 1.5rem;
+  }
+
+  .page-home .hero h1 {
+    font-size: clamp(3rem, 7vw, 4.9rem);
+  }
+
+  .page-home .player-preview-grid,
+  .page-home .organizer-preview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .page-home .container {
+    width: calc(100% - 2rem);
+  }
+
+  .page-home .hero {
+    padding: 4rem 0 3.6rem;
+  }
+
+  .page-home .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-home .hero h1 {
+    max-width: 11ch;
+    font-size: clamp(3.25rem, 13vw, 5rem);
+  }
+
+  .page-home .tournament-preview {
+    max-width: 560px;
+    margin: 0.45rem auto 0;
+    transform: none;
+  }
+
+  .page-home .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .page-home .tournament-grid,
+  .page-home .community-preview-grid,
+  .page-home .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .page-home .step {
+    min-height: 0;
+  }
+
+  .page-home .organizer-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-home .container,
+  .page-home .faq-section {
+    width: calc(100% - 1.5rem);
+  }
+
+  .page-home .hero h1 {
+    font-size: clamp(3rem, 14vw, 4rem);
+  }
+
+  .page-home .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .page-home .hero-actions .button {
+    width: 100%;
+  }
+
+  .page-home .preview-art {
+    min-height: 185px;
+  }
+
+  .page-home .preview-meta {
+    flex-wrap: wrap;
+  }
+
+  .page-home .player-preview-grid,
+  .page-home .organizer-preview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-home .tournament-preview,
+  .page-home .feature-card,
+  .page-home .tournament-card,
+  .page-home .community-card,
+  .page-home .preview-feature,
+  .page-home .card-link {
+    transition: none;
+  }
+}
+
+
+/* Home-only atmosphere: match lights, layered arena glow and quiet grid */
+body.page-home {
+  background-color: #050d08;
+  background-image:
+    radial-gradient(ellipse at 5% 15%, rgba(44, 111, 61, 0.16), transparent 31rem),
+    radial-gradient(ellipse at 95% 66%, rgba(139, 180, 60, 0.08), transparent 28rem),
+    repeating-linear-gradient(0deg, transparent 0 47px, rgba(202, 235, 179, 0.018) 48px),
+    repeating-linear-gradient(90deg, transparent 0 47px, rgba(202, 235, 179, 0.016) 48px),
+    #050d08;
+}
+
+
+/* RGB edge light variables for the shared atmospheric layer */
+body.page-home {
+  --gt-rgb-a: rgba(0, 220, 255, 0.07);
+  --gt-rgb-b: rgba(90, 73, 255, 0.055);
+  --gt-rgb-c: rgba(194, 240, 75, 0.06);
+}
+
+/* Homepage arena pass: cyan and electric violet are visible at first glance */
+body.page-home {
+  --gt-page-accent: #31e4ff;
+  --gt-page-accent-2: #a15cff;
+  --gt-rgb-a: rgba(0, 209, 255, 0.25);
+  --gt-rgb-b: rgba(112, 66, 255, 0.22);
+  --gt-rgb-c: rgba(255, 43, 186, 0.12);
+  background-color: #05070d;
+  background-image:
+    radial-gradient(ellipse at 4% 18%, rgba(0, 203, 255, 0.21), transparent 34rem),
+    radial-gradient(ellipse at 92% 38%, rgba(110, 65, 255, 0.18), transparent 34rem),
+    radial-gradient(ellipse at 52% 96%, rgba(255, 42, 180, 0.1), transparent 35rem),
+    repeating-linear-gradient(0deg, transparent 0 55px, rgba(114, 171, 255, 0.027) 56px),
+    repeating-linear-gradient(90deg, transparent 0 55px, rgba(114, 171, 255, 0.024) 56px),
+    #05070d;
+}
+
+.page-home .hero {
+  border-bottom-color: rgba(49, 228, 255, 0.24);
+  background:
+    radial-gradient(ellipse at 78% 28%, rgba(0, 210, 255, 0.31), transparent 30rem),
+    radial-gradient(ellipse at 96% 82%, rgba(133, 65, 255, 0.28), transparent 31rem),
+    radial-gradient(ellipse at 4% 96%, rgba(255, 47, 184, 0.12), transparent 26rem),
+    linear-gradient(130deg, #101a2c 0%, #080b14 58%, #111029 100%);
+}
+
+.page-home .hero h1 span {
+  color: #42e6ff;
+  text-shadow: 0 0 36px rgba(33, 209, 255, 0.32);
+}
+
+.page-home .eyebrow,
+.page-home .section-kicker,
+.page-home .preview-label small,
+.page-home .preview-status {
+  color: #4bdeff;
+}
+
+.page-home .tournament-preview,
+.page-home .tournament-card,
+.page-home .community-card,
+.page-home .organizer-panel,
+.page-home .preview-feature,
+.page-home .step {
+  border-color: rgba(132, 169, 223, 0.19);
+  background-color: rgba(10, 14, 24, 0.92);
+  background-image: linear-gradient(145deg, rgba(24, 34, 54, 0.85), rgba(7, 10, 18, 0.97));
+}
+
+.page-home .tournament-card:hover,
+.page-home .community-card:hover,
+.page-home .preview-feature:hover,
+.page-home .tournament-preview:hover {
+  border-color: rgba(49, 228, 255, 0.56);
+  box-shadow: 0 18px 48px rgba(0, 193, 255, 0.12), 0 24px 65px rgba(0, 0, 0, 0.35);
+}
+
+.page-home .preview-art {
+  border-color: rgba(75, 189, 255, 0.32);
+  background:
+    radial-gradient(circle at 72% 24%, rgba(0, 221, 255, 0.52), transparent 9rem),
+    radial-gradient(circle at 79% 77%, rgba(140, 55, 255, 0.55), transparent 13rem),
+    linear-gradient(145deg, #172a4d, #101329 62%, #080b14);
+}
+
+.page-home .preview-art::before {
+  border-color: rgba(96, 225, 255, 0.52);
+  box-shadow: 0 0 0 1.3rem rgba(49, 181, 255, 0.09), 0 0 76px rgba(32, 192, 255, 0.44);
+}
+
+.page-home .how-section {
+  background:
+    radial-gradient(ellipse at 4% 55%, rgba(15, 166, 255, 0.14), transparent 32rem),
+    radial-gradient(ellipse at 95% 45%, rgba(126, 65, 255, 0.12), transparent 31rem),
+    linear-gradient(100deg, rgba(12, 19, 33, 0.96), rgba(7, 9, 16, 0.9));
+}
+
+.page-home .organizer-panel {
+  border-color: rgba(151, 104, 255, 0.38);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(143, 76, 255, 0.24), transparent 21rem),
+    radial-gradient(circle at 0% 100%, rgba(0, 199, 255, 0.13), transparent 20rem),
+    linear-gradient(120deg, #11192a, #090c15);
+}
+/* Homepage arena pass: cyan and electric violet are visible at first glance */
+body.page-home {
+  --gt-page-accent: #31e4ff;
+  --gt-page-accent-2: #a15cff;
+  --gt-rgb-a: rgba(0, 209, 255, 0.25);
+  --gt-rgb-b: rgba(112, 66, 255, 0.22);
+  --gt-rgb-c: rgba(255, 43, 186, 0.12);
+  background-color: #05070d;
+  background-image:
+    radial-gradient(ellipse at 4% 18%, rgba(0, 203, 255, 0.21), transparent 34rem),
+    radial-gradient(ellipse at 92% 38%, rgba(110, 65, 255, 0.18), transparent 34rem),
+    radial-gradient(ellipse at 52% 96%, rgba(255, 42, 180, 0.1), transparent 35rem),
+    repeating-linear-gradient(0deg, transparent 0 55px, rgba(114, 171, 255, 0.027) 56px),
+    repeating-linear-gradient(90deg, transparent 0 55px, rgba(114, 171, 255, 0.024) 56px),
+    #05070d;
+}
+
+.page-home .hero {
+  border-bottom-color: rgba(49, 228, 255, 0.24);
+  background:
+    radial-gradient(ellipse at 78% 28%, rgba(0, 210, 255, 0.31), transparent 30rem),
+    radial-gradient(ellipse at 96% 82%, rgba(133, 65, 255, 0.28), transparent 31rem),
+    radial-gradient(ellipse at 4% 96%, rgba(255, 47, 184, 0.12), transparent 26rem),
+    linear-gradient(130deg, #101a2c 0%, #080b14 58%, #111029 100%);
+}
+
+.page-home .hero h1 span {
+  color: #42e6ff;
+  text-shadow: 0 0 36px rgba(33, 209, 255, 0.32);
+}
+
+.page-home .eyebrow,
+.page-home .section-kicker,
+.page-home .preview-label small,
+.page-home .preview-status {
+  color: #4bdeff;
+}
+
+.page-home .tournament-preview,
+.page-home .tournament-card,
+.page-home .community-card,
+.page-home .organizer-panel,
+.page-home .preview-feature,
+.page-home .step {
+  border-color: rgba(132, 169, 223, 0.19);
+  background-color: rgba(10, 14, 24, 0.92);
+  background-image: linear-gradient(145deg, rgba(24, 34, 54, 0.85), rgba(7, 10, 18, 0.97));
+}
+
+.page-home .tournament-card:hover,
+.page-home .community-card:hover,
+.page-home .preview-feature:hover,
+.page-home .tournament-preview:hover {
+  border-color: rgba(49, 228, 255, 0.56);
+  box-shadow: 0 18px 48px rgba(0, 193, 255, 0.12), 0 24px 65px rgba(0, 0, 0, 0.35);
+}
+
+.page-home .preview-art {
+  border-color: rgba(75, 189, 255, 0.32);
+  background:
+    radial-gradient(circle at 72% 24%, rgba(0, 221, 255, 0.52), transparent 9rem),
+    radial-gradient(circle at 79% 77%, rgba(140, 55, 255, 0.55), transparent 13rem),
+    linear-gradient(145deg, #172a4d, #101329 62%, #080b14);
+}
+
+.page-home .preview-art::before {
+  border-color: rgba(96, 225, 255, 0.52);
+  box-shadow: 0 0 0 1.3rem rgba(49, 181, 255, 0.09), 0 0 76px rgba(32, 192, 255, 0.44);
+}
+
+.page-home .how-section {
+  background:
+    radial-gradient(ellipse at 4% 55%, rgba(15, 166, 255, 0.14), transparent 32rem),
+    radial-gradient(ellipse at 95% 45%, rgba(126, 65, 255, 0.12), transparent 31rem),
+    linear-gradient(100deg, rgba(12, 19, 33, 0.96), rgba(7, 9, 16, 0.9));
+}
+
+.page-home .organizer-panel {
+  border-color: rgba(151, 104, 255, 0.38);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(143, 76, 255, 0.24), transparent 21rem),
+    radial-gradient(circle at 0% 100%, rgba(0, 199, 255, 0.13), transparent 20rem),
+    linear-gradient(120deg, #11192a, #090c15);
+}

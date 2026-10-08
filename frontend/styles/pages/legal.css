@@ -1,0 +1,84 @@
+/* Draft legal and community policy pages */
+.page-legal .page-hero {
+  background:
+    radial-gradient(ellipse at 88% 4%, rgba(194, 240, 75, 0.12), transparent 27rem),
+    linear-gradient(135deg, #0e2016, #08150e 70%);
+}
+
+.page-legal .page-hero h1 {
+  max-width: 760px;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.page-legal .sample-banner {
+  border-left: 3px solid rgba(194, 240, 75, 0.7);
+}
+
+.page-legal .content-heading {
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--gt-line);
+}
+
+.page-legal .feature-card {
+  min-height: 148px;
+  background: linear-gradient(160deg, rgba(15, 32, 21, 0.78), rgba(8, 18, 11, 0.88));
+}
+
+.page-legal .feature-card .card-tag {
+  color: var(--gt-lime-soft);
+}
+
+.page-legal .page-section + .page-section {
+  margin-top: 2.8rem;
+}
+
+@media (min-width: 1000px) {
+  .page-legal .page-content {
+    padding-top: 3rem;
+  }
+}
+
+
+/* Separate policy-page atmospheres: quiet and document-led, still premium */
+body.page-legal-terms {
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 37px, rgba(194,240,75,.018) 38px),
+    radial-gradient(ellipse at 84% 18%, rgba(68,136,81,.12), transparent 22rem),
+    #050c08;
+}
+.page-legal-terms .page-hero { background: linear-gradient(90deg,rgba(194,240,75,.025) 1px,transparent 1px) 0 0 / 46px 100%, linear-gradient(135deg,#102118,#08140d 72%); }
+body.page-legal-privacy {
+  background-image:
+    radial-gradient(circle at 82% 21%, transparent 0 4rem, rgba(194,240,75,.045) 4.1rem 4.15rem, transparent 4.25rem 8rem, rgba(194,240,75,.03) 8.1rem 8.15rem, transparent 8.25rem),
+    radial-gradient(ellipse at 81% 17%, rgba(59,133,77,.13), transparent 25rem),
+    #050d09;
+}
+.page-legal-privacy .page-hero { background: radial-gradient(circle at 84% 27%, rgba(194,240,75,.09), transparent 9rem), linear-gradient(135deg,#10241b,#08140e 72%); }
+body.page-legal-refund-policy {
+  background-image:
+    radial-gradient(ellipse at 85% 16%, rgba(190,164,65,.08), transparent 21rem),
+    repeating-linear-gradient(90deg, transparent 0 72px, rgba(194,240,75,.018) 73px),
+    #080d08;
+}
+.page-legal-refund-policy .page-hero { background: radial-gradient(circle at 86% 24%, rgba(204,180,79,.11), transparent 5rem), linear-gradient(135deg,#1a2116,#09140d 72%); }
+body.page-legal-community-guidelines {
+  background-image:
+    radial-gradient(ellipse at 15% 19%, rgba(71,146,84,.15), transparent 23rem),
+    radial-gradient(ellipse at 85% 83%, rgba(194,240,75,.06), transparent 19rem),
+    #050d09;
+}
+.page-legal-community-guidelines .page-hero { background: radial-gradient(ellipse at 80% 14%, rgba(194,240,75,.12), transparent 22rem), linear-gradient(135deg,#10261a,#08140d 73%); }
+
+
+body.page-legal-terms { --gt-rgb-a: rgba(0, 218, 255, 0.04); --gt-rgb-b: rgba(73, 105, 255, 0.045); --gt-rgb-c: rgba(194, 240, 75, 0.035); }
+body.page-legal-privacy { --gt-rgb-a: rgba(0, 228, 239, 0.05); --gt-rgb-b: rgba(73, 117, 255, 0.045); --gt-rgb-c: rgba(194, 240, 75, 0.04); }
+body.page-legal-refund-policy { --gt-rgb-a: rgba(244, 179, 71, 0.035); --gt-rgb-b: rgba(103, 94, 255, 0.045); --gt-rgb-c: rgba(194, 240, 75, 0.04); }
+body.page-legal-community-guidelines { --gt-rgb-a: rgba(0, 232, 206, 0.045); --gt-rgb-b: rgba(89, 104, 255, 0.04); --gt-rgb-c: rgba(147, 230, 92, 0.06); }
+
+
+
+/* Brighter route palette: this page now carries its own RGB light. */
+body.page-legal-terms { --gt-page-accent: #48dfff; --gt-page-accent-2: #667dff; --gt-rgb-a: rgba(0, 203, 255, 0.21); --gt-rgb-b: rgba(69, 99, 255, 0.18); --gt-rgb-c: rgba(153, 74, 255, 0.11); }
+body.page-legal-privacy { --gt-page-accent: #36ead6; --gt-page-accent-2: #3d9cff; --gt-rgb-a: rgba(0, 214, 190, 0.21); --gt-rgb-b: rgba(32, 144, 255, 0.18); --gt-rgb-c: rgba(121, 87, 255, 0.12); }
+body.page-legal-refund-policy { --gt-page-accent: #ffc05e; --gt-page-accent-2: #b66dff; --gt-rgb-a: rgba(255, 173, 65, 0.20); --gt-rgb-b: rgba(145, 75, 255, 0.18); --gt-rgb-c: rgba(255, 73, 131, 0.12); }
+body.page-legal-community-guidelines { --gt-page-accent: #5ee6b0; --gt-page-accent-2: #30caff; --gt-rgb-a: rgba(36, 221, 154, 0.20); --gt-rgb-b: rgba(0, 182, 255, 0.18); --gt-rgb-c: rgba(123, 89, 255, 0.12); }

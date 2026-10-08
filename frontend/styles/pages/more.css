@@ -1,0 +1,98 @@
+/* Utility pages: about, search, help, settings, notifications, contact */
+.page-more .page-hero {
+  background:
+    radial-gradient(ellipse at 82% 12%, rgba(194, 240, 75, 0.13), transparent 27rem),
+    linear-gradient(135deg, #0d2116, #09160f 66%);
+}
+
+.page-more-search .search-demo {
+  width: min(100%, 850px);
+  padding: 0.75rem;
+  border: 1px solid var(--gt-line);
+  border-radius: var(--gt-radius-lg);
+  background: rgba(12, 28, 18, 0.94);
+}
+
+.page-more-search .search-demo input {
+  min-height: 50px;
+  padding-inline: 1rem;
+}
+
+.page-more-search .search-demo .button-primary {
+  min-width: 130px;
+}
+
+.page-more-about .feature-card,
+.page-more-settings .feature-card,
+.page-more-notifications .feature-card,
+.page-more-help .feature-card {
+  min-height: 150px;
+}
+
+.page-more-settings .sample-banner,
+.page-more-notifications .sample-banner {
+  border-left: 3px solid var(--gt-lime);
+}
+
+.page-more .page-content > .page-section:last-child {
+  padding-bottom: 0.5rem;
+}
+
+@media (max-width: 560px) {
+  .page-more-search .search-demo {
+    padding: 0.65rem;
+  }
+
+  .page-more-search .search-demo .button-primary {
+    width: 100%;
+  }
+}
+
+
+/* Individual moods for utility pages; every surface keeps the same dark brand */
+body.page-more-about {
+  background-image:
+    radial-gradient(circle at 50% 17%, rgba(194, 240, 75, 0.12), transparent 22rem),
+    radial-gradient(ellipse at 8% 86%, rgba(52, 119, 70, 0.14), transparent 26rem),
+    #050d09;
+}
+.page-more-about .page-hero { background: radial-gradient(ellipse at 50% 15%, rgba(194,240,75,.15), transparent 24rem), linear-gradient(180deg,#12271a,#09150e 74%); }
+body.page-more-search {
+  background-image:
+    radial-gradient(circle at 76% 29%, transparent 0 5rem, rgba(194,240,75,.055) 5.05rem 5.1rem, transparent 5.2rem 10rem, rgba(194,240,75,.04) 10.05rem 10.1rem, transparent 10.2rem),
+    radial-gradient(ellipse at 80% 22%, rgba(69, 139, 76, 0.12), transparent 27rem),
+    #050d09;
+}
+.page-more-search .page-hero { background: radial-gradient(circle at 84% 28%, transparent 0 3rem, rgba(194,240,75,.09) 3.05rem 3.1rem, transparent 3.2rem 7rem, rgba(194,240,75,.045) 7.05rem 7.1rem, transparent 7.2rem), linear-gradient(135deg,#11241a,#08140d 73%); }
+body.page-more-notifications {
+  background-image:
+    radial-gradient(circle at 18% 23%, rgba(194,240,75,.12) 1px, transparent 2px),
+    radial-gradient(circle at 77% 63%, rgba(104,183,106,.1) 1.5px, transparent 2.5px),
+    radial-gradient(circle at 47% 88%, rgba(194,240,75,.075) 1px, transparent 2px),
+    #050d09;
+  background-size: 42px 42px, 61px 61px, 85px 85px, auto;
+}
+.page-more-notifications .page-hero { background: radial-gradient(ellipse at 85% 11%, rgba(194,240,75,.13), transparent 23rem), linear-gradient(130deg,#102219,#08140d 72%); }
+body.page-more-settings {
+  background-image:
+    linear-gradient(rgba(125,166,111,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(125,166,111,.025) 1px, transparent 1px),
+    radial-gradient(ellipse at 50% 5%, rgba(62,126,82,.13), transparent 29rem),
+    #050c08;
+  background-size: 30px 30px, 30px 30px, auto, auto;
+}
+.page-more-settings .page-hero { background: linear-gradient(115deg,rgba(194,240,75,.035),transparent 44%), radial-gradient(ellipse at 84% 12%,rgba(107,170,89,.14),transparent 24rem), linear-gradient(135deg,#102219,#08140d 72%); }
+
+
+body.page-more-about { --gt-rgb-a: rgba(0, 224, 255, 0.05); --gt-rgb-b: rgba(74, 95, 255, 0.05); --gt-rgb-c: rgba(194, 240, 75, 0.06); }
+body.page-more-search { --gt-rgb-a: rgba(0, 234, 255, 0.06); --gt-rgb-b: rgba(58, 107, 255, 0.06); --gt-rgb-c: rgba(176, 83, 255, 0.035); }
+body.page-more-notifications { --gt-rgb-a: rgba(0, 224, 255, 0.045); --gt-rgb-b: rgba(179, 63, 255, 0.05); --gt-rgb-c: rgba(194, 240, 75, 0.045); }
+body.page-more-settings { --gt-rgb-a: rgba(0, 218, 255, 0.045); --gt-rgb-b: rgba(65, 108, 255, 0.06); --gt-rgb-c: rgba(116, 235, 150, 0.045); }
+
+
+
+/* Brighter route palette: this page now carries its own RGB light. */
+body.page-more-about { --gt-page-accent: #4be2ff; --gt-page-accent-2: #667cff; --gt-rgb-a: rgba(0, 200, 255, 0.22); --gt-rgb-b: rgba(80, 94, 255, 0.19); --gt-rgb-c: rgba(176, 70, 255, 0.12); }
+body.page-more-search { --gt-page-accent: #28e3ff; --gt-page-accent-2: #438bff; --gt-rgb-a: rgba(0, 211, 255, 0.25); --gt-rgb-b: rgba(47, 112, 255, 0.20); --gt-rgb-c: rgba(134, 74, 255, 0.13); }
+body.page-more-notifications { --gt-page-accent: #d07aff; --gt-page-accent-2: #4b92ff; --gt-rgb-a: rgba(184, 70, 255, 0.22); --gt-rgb-b: rgba(54, 118, 255, 0.19); --gt-rgb-c: rgba(255, 55, 183, 0.12); }
+body.page-more-settings { --gt-page-accent: #54aaff; --gt-page-accent-2: #33e1ff; --gt-rgb-a: rgba(57, 129, 255, 0.22); --gt-rgb-b: rgba(0, 204, 255, 0.18); --gt-rgb-c: rgba(99, 82, 255, 0.12); }

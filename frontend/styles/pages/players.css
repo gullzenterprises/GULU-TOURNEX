@@ -1,0 +1,86 @@
+/* Player tools and benefits */
+.page-players .page-hero {
+  background:
+    radial-gradient(ellipse at 90% 12%, rgba(154, 195, 77, 0.18), transparent 27rem),
+    linear-gradient(130deg, #11281a, #09170f 65%);
+}
+
+.page-players .step-list {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.page-players .step-item {
+  min-height: 124px;
+  padding: 3.4rem 1rem 1rem;
+  background: linear-gradient(155deg, rgba(21, 47, 30, 0.86), rgba(8, 20, 13, 0.94));
+}
+
+.page-players .step-item::before {
+  top: 1rem;
+  left: 1rem;
+  display: grid;
+  width: 1.8rem;
+  height: 1.8rem;
+  place-items: center;
+  border: 1px solid rgba(194, 240, 75, 0.27);
+  border-radius: 0.65rem;
+  background: rgba(194, 240, 75, 0.08);
+}
+
+.page-players .feature-grid .feature-card:first-child {
+  border-top: 2px solid rgba(194, 240, 75, 0.64);
+}
+
+.page-players .feature-grid .feature-card:nth-child(2) {
+  border-top: 2px solid rgba(194, 240, 75, 0.34);
+}
+
+.page-players .feature-grid .feature-card:nth-child(3) {
+  border-top: 2px solid rgba(194, 240, 75, 0.18);
+}
+
+@media (max-width: 950px) {
+  .page-players .step-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .page-players .step-list {
+    grid-template-columns: 1fr;
+  }
+
+  .page-players .step-item {
+    min-height: 90px;
+    padding: 1rem 1rem 1rem 3.4rem;
+  }
+}
+
+
+/* Player route: subtle speed lanes and emerald floor light */
+body.page-players {
+  background-color: #050d09;
+  background-image:
+    radial-gradient(ellipse at 78% 10%, rgba(157, 207, 76, 0.13), transparent 25rem),
+    radial-gradient(ellipse at 5% 70%, rgba(34, 102, 70, 0.13), transparent 26rem),
+    repeating-linear-gradient(115deg, transparent 0 72px, rgba(194, 240, 75, 0.018) 73px 74px),
+    #050d09;
+}
+.page-players .page-hero {
+  background:
+    linear-gradient(110deg, transparent 0 71%, rgba(194, 240, 75, 0.045) 71.2%, transparent 71.6%),
+    radial-gradient(ellipse at 83% 12%, rgba(166, 210, 79, 0.19), transparent 25rem),
+    linear-gradient(130deg, #12291b, #08140d 71%);
+}
+
+
+body.page-players {
+  --gt-rgb-a: rgba(0, 232, 255, 0.065);
+  --gt-rgb-b: rgba(47, 122, 255, 0.05);
+  --gt-rgb-c: rgba(122, 229, 106, 0.065);
+}
+
+
+
+/* Brighter route palette: this page now carries its own RGB light. */
+body.page-players { --gt-page-accent: #44f0d0; --gt-page-accent-2: #38baff; --gt-rgb-a: rgba(0, 229, 196, 0.22); --gt-rgb-b: rgba(44, 151, 255, 0.18); --gt-rgb-c: rgba(72, 234, 205, 0.13); }

@@ -1,0 +1,58 @@
+/* Winner highlights and tournament recap cards */
+.page-winners .page-hero {
+  background:
+    radial-gradient(circle at 86% 18%, rgba(194, 240, 75, 0.18), transparent 25rem),
+    linear-gradient(135deg, #12251a, #09160f 68%);
+}
+
+.page-winners .feature-grid:first-of-type .feature-card {
+  min-height: 170px;
+  padding-top: 1.35rem;
+}
+
+.page-winners .feature-card .card-tag {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid rgba(194, 240, 75, 0.2);
+  border-radius: 999px;
+  background: rgba(194, 240, 75, 0.06);
+}
+
+.page-winners .feature-card h3 {
+  font-size: 1.12rem;
+}
+
+.page-winners .feature-card:first-child {
+  border-color: rgba(194, 240, 75, 0.28);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(194, 240, 75, 0.11), transparent 12rem),
+    linear-gradient(145deg, rgba(21, 44, 29, 0.94), rgba(9, 22, 14, 0.97));
+}
+
+
+/* Winners route: stage spotlights and quiet rings */
+body.page-winners {
+  background-color: #080d08;
+  background-image:
+    radial-gradient(ellipse at 18% 26%, rgba(197, 171, 62, 0.095), transparent 21rem),
+    radial-gradient(ellipse at 82% 24%, rgba(194, 240, 75, 0.12), transparent 25rem),
+    radial-gradient(ellipse at 50% 80%, rgba(56, 120, 70, 0.11), transparent 29rem),
+    #080d08;
+}
+.page-winners .page-hero {
+  background:
+    radial-gradient(circle at 78% 28%, rgba(231, 218, 143, 0.12), transparent 5rem),
+    radial-gradient(ellipse at 81% 8%, rgba(194, 240, 75, 0.17), transparent 24rem),
+    linear-gradient(135deg, #192519, #0a140d 71%);
+}
+
+
+body.page-winners {
+  --gt-rgb-a: rgba(255, 52, 205, 0.045);
+  --gt-rgb-b: rgba(132, 71, 255, 0.07);
+  --gt-rgb-c: rgba(194, 240, 75, 0.05);
+}
+
+
+
+/* Brighter route palette: this page now carries its own RGB light. */
+body.page-winners { --gt-page-accent: #ff64c7; --gt-page-accent-2: #a26cff; --gt-rgb-a: rgba(255, 59, 177, 0.22); --gt-rgb-b: rgba(131, 71, 255, 0.21); --gt-rgb-c: rgba(255, 181, 77, 0.12); }

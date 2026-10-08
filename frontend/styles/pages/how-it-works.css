@@ -1,0 +1,76 @@
+/* Player journey / how it works */
+.page-how-it-works .page-hero {
+  background:
+    radial-gradient(circle at 82% 30%, rgba(194, 240, 75, 0.14), transparent 20rem),
+    linear-gradient(135deg, #0e2418, #09160f 70%);
+}
+
+.page-how-it-works .step-list {
+  position: relative;
+  gap: 0.95rem;
+}
+
+.page-how-it-works .step-item {
+  min-height: 126px;
+  padding: 1.25rem 1.1rem 1.15rem 3.75rem;
+  background:
+    radial-gradient(circle at 0 0, rgba(194, 240, 75, 0.09), transparent 11rem),
+    var(--gt-panel);
+}
+
+.page-how-it-works .step-item::before {
+  top: 1.25rem;
+  left: 1.15rem;
+  display: grid;
+  width: 1.8rem;
+  height: 1.8rem;
+  place-items: center;
+  border: 1px solid rgba(194, 240, 75, 0.3);
+  border-radius: 50%;
+  background: rgba(194, 240, 75, 0.08);
+}
+
+.page-how-it-works .page-section:last-child .feature-card:nth-child(2) {
+  border-color: rgba(194, 240, 75, 0.25);
+}
+
+@media (max-width: 800px) {
+  .page-how-it-works .step-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-how-it-works .step-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Match path: three soft light nodes hint at the player journey */
+body.page-how-it-works {
+  background-color: #06100b;
+  background-image:
+    radial-gradient(circle at 12% 23%, rgba(194, 240, 75, 0.1), transparent 12rem),
+    radial-gradient(circle at 87% 49%, rgba(87, 157, 74, 0.13), transparent 18rem),
+    radial-gradient(circle at 24% 91%, rgba(194, 240, 75, 0.055), transparent 17rem),
+    linear-gradient(180deg, #07130d, #050c08);
+}
+.page-how-it-works .page-hero {
+  background:
+    linear-gradient(90deg, rgba(194, 240, 75, 0.035) 1px, transparent 1px) 0 0 / 78px 100%,
+    radial-gradient(ellipse at 82% 26%, rgba(194, 240, 75, 0.18), transparent 24rem),
+    linear-gradient(130deg, #10251a, #08140d 70%);
+}
+
+
+body.page-how-it-works {
+  --gt-rgb-a: rgba(0, 220, 255, 0.06);
+  --gt-rgb-b: rgba(67, 95, 255, 0.05);
+  --gt-rgb-c: rgba(110, 232, 163, 0.06);
+}
+
+
+
+/* Brighter route palette: this page now carries its own RGB light. */
+body.page-how-it-works { --gt-page-accent: #27e2f5; --gt-page-accent-2: #518cff; --gt-rgb-a: rgba(0, 220, 245, 0.23); --gt-rgb-b: rgba(59, 113, 255, 0.19); --gt-rgb-c: rgba(44, 230, 192, 0.12); }

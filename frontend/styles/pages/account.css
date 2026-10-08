@@ -1,0 +1,354 @@
+/* Private account screens and authentication UI */
+.page-account-login .auth-panel,
+.page-account-signup .auth-panel,
+.page-account-choose-username .auth-panel {
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.page-account-login .auth-panel,
+.page-account-signup .auth-panel {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(194, 240, 75, 0.16);
+  border-radius: var(--gt-radius-xl);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(194, 240, 75, 0.1), transparent 18rem),
+    linear-gradient(145deg, rgba(16, 37, 24, 0.98), rgba(7, 19, 12, 0.99));
+  box-shadow: 0 30px 85px rgba(0, 0, 0, 0.35);
+}
+
+.page-account-login .auth-panel-heading h2,
+.page-account-signup .auth-panel-heading h2 {
+  font-size: clamp(1.6rem, 4vw, 2rem);
+}
+
+.page-account-login .auth-panel-heading p,
+.page-account-signup .auth-panel-heading p {
+  max-width: 42rem;
+  margin: 0.5rem 0 1.25rem;
+  color: var(--gt-muted);
+}
+
+.page-account-login .oauth-grid,
+.page-account-signup .oauth-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.page-account-login .oauth-button,
+.page-account-signup .oauth-button {
+  min-height: 48px;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--gt-line-strong);
+  border-radius: 0.78rem;
+  background: rgba(5, 16, 10, 0.7);
+  color: var(--gt-text);
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform var(--gt-motion), border-color var(--gt-motion), background var(--gt-motion);
+}
+
+.page-account-login .oauth-button:hover,
+.page-account-signup .oauth-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(194, 240, 75, 0.44);
+  background: rgba(194, 240, 75, 0.06);
+}
+
+.page-account-login .oauth-button:disabled,
+.page-account-signup .oauth-button:disabled {
+  cursor: wait;
+  opacity: 0.62;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 1.15rem 0;
+  color: var(--gt-muted-strong);
+  font-size: 0.73rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  height: 1px;
+  flex: 1;
+  background: var(--gt-line);
+  content: "";
+}
+
+.auth-form {
+  width: 100%;
+  max-width: none;
+  border-color: rgba(213, 231, 211, 0.09);
+  background: rgba(4, 14, 8, 0.5);
+  box-shadow: none;
+}
+
+.auth-form label {
+  width: 100%;
+}
+
+.auth-form .auth-submit {
+  min-width: 170px;
+  margin-top: 0.2rem;
+}
+
+.auth-status {
+  margin: 0.9rem 0;
+  padding: 0.76rem 0.9rem;
+  border: 1px solid rgba(194, 240, 75, 0.25);
+  border-radius: 0.75rem;
+  background: rgba(194, 240, 75, 0.07);
+  color: var(--gt-lime-soft);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.auth-status[data-tone="error"] {
+  border-color: rgba(255, 154, 136, 0.4);
+  background: rgba(109, 33, 30, 0.25);
+  color: #ffd2ca;
+}
+
+.auth-status[data-tone="success"] {
+  border-color: rgba(185, 239, 131, 0.4);
+  background: rgba(63, 102, 35, 0.25);
+  color: #e2f6cd;
+}
+
+.auth-switch,
+.auth-footnote {
+  color: var(--gt-muted);
+  font-size: 0.81rem;
+}
+
+.auth-switch a {
+  color: var(--gt-lime-bright);
+  font-weight: 850;
+}
+
+.auth-footnote {
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--gt-line);
+  font-size: 0.72rem;
+}
+
+.username-field {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0 0.8rem;
+  border: 1px solid var(--gt-line-strong);
+  border-radius: 0.75rem;
+  background: rgba(4, 13, 8, 0.7);
+  color: var(--gt-lime);
+  font-weight: 850;
+}
+
+.username-field input {
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--gt-text);
+  box-shadow: none;
+}
+
+.username-field:focus-within {
+  border-color: rgba(194, 240, 75, 0.7);
+  box-shadow: 0 0 0 3px rgba(194, 240, 75, 0.1);
+}
+
+.username-status {
+  margin: 0.25rem 0 0;
+}
+
+.page-account-profile .profile-overview {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  padding: 1.35rem;
+  border: 1px solid var(--gt-line);
+  border-radius: var(--gt-radius-lg);
+  background: linear-gradient(135deg, rgba(18, 40, 26, 0.96), rgba(8, 20, 13, 0.97));
+  box-shadow: var(--gt-shadow-soft);
+}
+
+.profile-avatar {
+  display: grid;
+  width: 78px;
+  height: 78px;
+  flex: 0 0 auto;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(194, 240, 75, 0.3);
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--gt-lime-bright), #8fb932);
+  color: #142016;
+  font-size: 1.65rem;
+  font-weight: 950;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-details {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.profile-details h2 {
+  margin: 0;
+  color: var(--gt-text);
+  font-size: 1.4rem;
+  letter-spacing: -0.035em;
+}
+
+.profile-handle,
+.profile-email {
+  margin: 0.22rem 0 0;
+  color: var(--gt-muted);
+  font-size: 0.82rem;
+}
+
+.profile-handle {
+  color: var(--gt-lime-bright);
+  font-weight: 800;
+}
+
+.profile-logout {
+  margin-top: 1rem;
+}
+
+.page-account .feature-card-link {
+  min-height: 140px;
+}
+
+@media (max-width: 700px) {
+  .page-account-login .oauth-grid,
+  .page-account-signup .oauth-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-account-profile .profile-overview {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .profile-avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .page-account-profile .profile-overview .status-pill {
+    margin-left: 0;
+  }
+
+  .auth-form .auth-submit {
+    width: 100%;
+  }
+}
+
+
+/* Distinct dark gaming backdrops for account journeys */
+body.page-account-login {
+  background-image:
+    radial-gradient(circle at 50% 35%, rgba(75, 142, 88, 0.17), transparent 28rem),
+    radial-gradient(circle at 10% 87%, rgba(194, 240, 75, 0.065), transparent 24rem),
+    #050d09;
+}
+.page-account-login .auth-hero {
+  background:
+    radial-gradient(circle at 50% 83%, transparent 0 5rem, rgba(194, 240, 75, 0.08) 5.05rem 5.1rem, transparent 5.2rem 9rem, rgba(194, 240, 75, 0.04) 9.05rem 9.1rem, transparent 9.2rem),
+    linear-gradient(180deg, #10251a, #09150e 82%);
+}
+body.page-account-signup {
+  background-image:
+    radial-gradient(ellipse at 90% 40%, rgba(126, 184, 71, 0.15), transparent 26rem),
+    radial-gradient(ellipse at 5% 85%, rgba(47, 119, 73, 0.14), transparent 24rem),
+    #050d09;
+}
+.page-account-signup .auth-hero {
+  background:
+    linear-gradient(120deg, transparent 0 66%, rgba(194, 240, 75, 0.04) 66.2%, transparent 66.6%),
+    radial-gradient(ellipse at 85% 15%, rgba(194, 240, 75, 0.16), transparent 23rem),
+    linear-gradient(135deg, #0e2116, #08140d 74%);
+}
+body.page-account-choose-username {
+  background-image:
+    linear-gradient(rgba(194, 240, 75, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(194, 240, 75, 0.02) 1px, transparent 1px),
+    radial-gradient(ellipse at 50% 35%, rgba(96, 167, 82, 0.15), transparent 25rem),
+    #050d09;
+  background-size: 44px 44px, 44px 44px, auto, auto;
+}
+.page-account-choose-username .auth-hero { background: radial-gradient(ellipse at 50% 90%, rgba(194,240,75,.12), transparent 24rem), linear-gradient(180deg,#11271a,#08140d 80%); }
+body.page-account-profile {
+  background-image:
+    radial-gradient(circle at 13% 22%, rgba(194, 240, 75, 0.09), transparent 17rem),
+    radial-gradient(circle at 86% 75%, rgba(54, 131, 84, 0.14), transparent 23rem),
+    #050d09;
+}
+.page-account-profile .page-hero { background: radial-gradient(circle at 83% 30%, rgba(194,240,75,.13), transparent 18rem), linear-gradient(135deg,#12251a,#08140d 72%); }
+body.page-account-my-tournaments {
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 62px, rgba(194, 240, 75, 0.02) 63px),
+    repeating-linear-gradient(90deg, transparent 0 62px, rgba(194, 240, 75, 0.018) 63px),
+    radial-gradient(circle at 77% 20%, rgba(75, 151, 78, 0.12), transparent 19rem),
+    #050d09;
+}
+.page-account-my-tournaments .page-hero { background: radial-gradient(ellipse at 84% 12%, rgba(194,240,75,.14), transparent 22rem), linear-gradient(135deg,#102319,#08140d 74%); }
+body.page-account-participation-codes {
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(194, 240, 75, 0.1) 1px, transparent 2px),
+    radial-gradient(circle at 75% 72%, rgba(124, 194, 95, 0.09) 1px, transparent 2px),
+    radial-gradient(ellipse at 70% 15%, rgba(75, 145, 77, 0.11), transparent 22rem),
+    #050d09;
+  background-size: 32px 32px, 48px 48px, auto, auto;
+}
+.page-account-participation-codes .page-hero { background: radial-gradient(circle at 85% 18%, rgba(194,240,75,.15), transparent 18rem), linear-gradient(135deg,#10231b,#08140d 70%); }
+body.page-account-my-results {
+  background-image:
+    linear-gradient(145deg, transparent 47%, rgba(194, 240, 75, 0.025) 48%, transparent 49%),
+    radial-gradient(ellipse at 70% 20%, rgba(86, 165, 79, 0.13), transparent 22rem),
+    #050d09;
+}
+.page-account-my-results .page-hero { background: radial-gradient(ellipse at 78% 14%, rgba(194,240,75,.16), transparent 23rem), linear-gradient(135deg,#13281a,#08140d 72%); }
+body.page-account-my-winnings {
+  background-image:
+    radial-gradient(ellipse at 50% 15%, rgba(191, 177, 77, 0.09), transparent 21rem),
+    radial-gradient(circle at 87% 72%, rgba(194, 240, 75, 0.09), transparent 19rem),
+    #080d08;
+}
+.page-account-my-winnings .page-hero { background: radial-gradient(circle at 84% 26%, rgba(220,203,94,.12), transparent 6rem), radial-gradient(ellipse at 84% 12%, rgba(194,240,75,.12), transparent 22rem), linear-gradient(135deg,#1a2417,#09140d 72%); }
+
+
+body.page-account-login { --gt-rgb-a: rgba(0, 220, 255, 0.055); --gt-rgb-b: rgba(98, 72, 255, 0.06); --gt-rgb-c: rgba(194, 240, 75, 0.045); }
+body.page-account-signup { --gt-rgb-a: rgba(0, 236, 208, 0.05); --gt-rgb-b: rgba(40, 115, 255, 0.05); --gt-rgb-c: rgba(150, 228, 92, 0.06); }
+body.page-account-choose-username { --gt-rgb-a: rgba(0, 223, 255, 0.05); --gt-rgb-b: rgba(128, 70, 255, 0.06); --gt-rgb-c: rgba(194, 240, 75, 0.05); }
+body.page-account-profile { --gt-rgb-a: rgba(48, 225, 255, 0.045); --gt-rgb-b: rgba(74, 116, 255, 0.05); --gt-rgb-c: rgba(194, 240, 75, 0.06); }
+body.page-account-my-tournaments { --gt-rgb-a: rgba(0, 229, 255, 0.05); --gt-rgb-b: rgba(55, 105, 255, 0.055); --gt-rgb-c: rgba(194, 240, 75, 0.045); }
+body.page-account-participation-codes { --gt-rgb-a: rgba(33, 226, 210, 0.05); --gt-rgb-b: rgba(77, 106, 255, 0.06); --gt-rgb-c: rgba(194, 240, 75, 0.04); }
+body.page-account-my-results { --gt-rgb-a: rgba(0, 222, 255, 0.05); --gt-rgb-b: rgba(117, 76, 255, 0.05); --gt-rgb-c: rgba(194, 240, 75, 0.05); }
+body.page-account-my-winnings { --gt-rgb-a: rgba(255, 91, 181, 0.035); --gt-rgb-b: rgba(146, 89, 255, 0.05); --gt-rgb-c: rgba(209, 184, 74, 0.05); }
+
+
+
+/* Brighter route palette: this page now carries its own RGB light. */
+body.page-account-login { --gt-page-accent: #64a9ff; --gt-page-accent-2: #8464ff; --gt-rgb-a: rgba(54, 137, 255, 0.22); --gt-rgb-b: rgba(120, 73, 255, 0.19); --gt-rgb-c: rgba(0, 193, 255, 0.12); }
+body.page-account-signup { --gt-page-accent: #3de2dc; --gt-page-accent-2: #438fff; --gt-rgb-a: rgba(0, 204, 195, 0.22); --gt-rgb-b: rgba(47, 124, 255, 0.19); --gt-rgb-c: rgba(146, 69, 255, 0.12); }
+body.page-account-choose-username { --gt-page-accent: #bd74ff; --gt-page-accent-2: #44caff; --gt-rgb-a: rgba(165, 73, 255, 0.22); --gt-rgb-b: rgba(32, 174, 255, 0.19); --gt-rgb-c: rgba(255, 55, 180, 0.12); }
+body.page-account-profile { --gt-page-accent: #36e6cf; --gt-page-accent-2: #4899ff; --gt-rgb-a: rgba(0, 220, 194, 0.21); --gt-rgb-b: rgba(50, 138, 255, 0.19); --gt-rgb-c: rgba(130, 85, 255, 0.12); }
+body.page-account-my-tournaments { --gt-page-accent: #29dfff; --gt-page-accent-2: #4a7dff; --gt-rgb-a: rgba(0, 205, 255, 0.22); --gt-rgb-b: rgba(53, 109, 255, 0.20); --gt-rgb-c: rgba(158, 67, 255, 0.12); }
+body.page-account-participation-codes { --gt-page-accent: #42e7ce; --gt-page-accent-2: #3baeff; --gt-rgb-a: rgba(0, 216, 183, 0.21); --gt-rgb-b: rgba(44, 153, 255, 0.18); --gt-rgb-c: rgba(106, 83, 255, 0.12); }
+body.page-account-my-results { --gt-page-accent: #46b7ff; --gt-page-accent-2: #8866ff; --gt-rgb-a: rgba(0, 165, 255, 0.21); --gt-rgb-b: rgba(117, 70, 255, 0.20); --gt-rgb-c: rgba(255, 63, 188, 0.12); }
+body.page-account-my-winnings { --gt-page-accent: #ff75c8; --gt-page-accent-2: #aa71ff; --gt-rgb-a: rgba(255, 66, 174, 0.21); --gt-rgb-b: rgba(144, 77, 255, 0.20); --gt-rgb-c: rgba(255, 171, 66, 0.13); }

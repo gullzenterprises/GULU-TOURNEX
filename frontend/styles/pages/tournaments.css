@@ -1,0 +1,105 @@
+/* Tournament discovery page */
+.page-tournaments .page-hero {
+  background:
+    radial-gradient(ellipse at 86% 10%, rgba(194, 240, 75, 0.18), transparent 28rem),
+    linear-gradient(130deg, #10261a, #09170f 65%);
+}
+
+.page-tournaments .filter-demo {
+  display: grid;
+  grid-template-columns: minmax(240px, 2fr) repeat(2, minmax(145px, 1fr)) auto;
+  align-items: end;
+  gap: 0.7rem;
+  margin: 0 0 1.7rem;
+  padding: 1rem;
+  border: 1px solid var(--gt-line);
+  border-radius: var(--gt-radius-lg);
+  background: linear-gradient(135deg, rgba(18, 41, 26, 0.94), rgba(8, 19, 12, 0.96));
+  box-shadow: var(--gt-shadow-soft);
+}
+
+.page-tournaments .filter-demo label {
+  display: grid;
+  min-width: 0;
+  gap: 0.35rem;
+  color: var(--gt-text-soft);
+  font-size: 0.73rem;
+  font-weight: 800;
+}
+
+.page-tournaments .filter-demo .button-primary {
+  white-space: nowrap;
+}
+
+.page-tournaments .feature-grid {
+  align-items: stretch;
+}
+
+.page-tournaments .feature-card {
+  display: flex;
+  min-height: 188px;
+  flex-direction: column;
+}
+
+.page-tournaments .feature-card p {
+  flex: 1 1 auto;
+}
+
+.page-tournaments .feature-card .card-tag {
+  width: fit-content;
+  padding: 0.23rem 0.48rem;
+  border: 1px solid rgba(194, 240, 75, 0.16);
+  border-radius: 999px;
+  background: rgba(194, 240, 75, 0.06);
+}
+
+.page-tournaments .page-section + .page-section {
+  padding-top: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .page-tournaments .filter-demo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .page-tournaments .filter-demo {
+    grid-template-columns: 1fr;
+    padding: 0.8rem;
+  }
+
+  .page-tournaments .filter-demo .button-primary {
+    width: 100%;
+  }
+}
+
+
+/* Arena floor: grid lines, safe-area glows and a clipped light beam */
+body.page-tournaments {
+  background-color: #050c08;
+  background-image:
+    radial-gradient(ellipse at 86% 19%, rgba(194, 240, 75, 0.09), transparent 27rem),
+    radial-gradient(ellipse at 13% 67%, rgba(31, 107, 69, 0.15), transparent 24rem),
+    repeating-linear-gradient(0deg, transparent 0 55px, rgba(194, 240, 75, 0.022) 56px),
+    repeating-linear-gradient(90deg, transparent 0 55px, rgba(194, 240, 75, 0.019) 56px),
+    #050c08;
+}
+.page-tournaments .page-hero {
+  background:
+    linear-gradient(112deg, transparent 0 62%, rgba(194, 240, 75, 0.045) 62.2%, transparent 62.6%),
+    radial-gradient(ellipse at 88% 17%, rgba(194, 240, 75, 0.19), transparent 26rem),
+    linear-gradient(130deg, #11251a, #08140d 72%);
+}
+
+
+body.page-tournaments {
+  --gt-rgb-a: rgba(0, 231, 255, 0.065);
+  --gt-rgb-b: rgba(55, 94, 255, 0.075);
+  --gt-rgb-c: rgba(194, 240, 75, 0.055);
+}
+
+
+
+/* Brighter route palette: this page now carries its own RGB light. */
+body.page-tournaments { --gt-page-accent: #28ddff; --gt-page-accent-2: #5571ff; --gt-rgb-a: rgba(0, 210, 255, 0.24); --gt-rgb-b: rgba(73, 99, 255, 0.20); --gt-rgb-c: rgba(142, 77, 255, 0.12); }

@@ -1,16 +1,170 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GULU TOURNEX</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <main>
-        <h1>GULU TOURNEX</h1>
-        <p>Project setup complete.</p>
-    </main>
-    <script src="script.js"></script>
-</body>
-</html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Discover the GULU TOURNEX tournament platform concept for players and organizers."><title>Home | GULU TOURNEX</title><link rel="stylesheet" href="./styles/style.css"><link rel="stylesheet" href="./styles/pages/home.css"></head>
+<body class="page-home">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="platform-header">
+  <div class="platform-header-inner">
+    <button class="sidebar-toggle" type="button" aria-label="Open site menu" aria-expanded="false" aria-controls="site-drawer" data-drawer-open><span aria-hidden="true">☰</span></button>
+    <a class="platform-brand" href="./index.html" aria-label="GULU TOURNEX home"><span class="brand-symbol">GT</span><span><strong>GULU TOURNEX</strong><small>PLAY. COMPETE. CONNECT.</small></span></a>
+    <nav class="platform-nav" aria-label="Main navigation">
+      <a href="./pages/tournaments.html">Tournaments</a><a href="./pages/how-it-works.html">How It Works</a><a href="./pages/players.html">For Players</a><a href="./pages/organizers.html">For Organizers</a><a href="./pages/leaderboard.html">Leaderboard</a><a href="./pages/winners.html">Winners</a><a href="./pages/support.html">Support</a>
+    </nav>
+    <div class="header-actions"><a class="search-link" href="./pages/more/search.html" aria-label="Search tournaments">⌕<span>Search</span></a><a class="login-link" data-auth-guest href="./pages/account/login.html">Login</a><a class="signup-link" data-auth-guest href="./pages/account/signup.html">Sign Up</a><a class="profile-link" data-auth-user hidden href="pages/account/profile.html"><span data-auth-username>My profile</span></a><button class="logout-link" type="button" data-auth-user data-auth-logout hidden>Log out</button><a class="host-link" href="./pages/organizers.html">Host a Tournament</a></div>
+  </div>
+</header>
+<div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+<aside class="site-drawer" id="site-drawer" aria-label="Site navigation" aria-hidden="true" inert>
+  <div class="drawer-top"><a class="platform-brand" href="./index.html"><span class="brand-symbol">GT</span><span><strong>GULU TOURNEX</strong><small>PLAY. COMPETE. CONNECT.</small></span></a><button class="drawer-close" type="button" aria-label="Close site menu">×</button></div>
+  <nav class="drawer-nav">
+    <h2>Menu</h2><a href="./index.html">Home</a><a href="./pages/tournaments.html">Tournaments</a><a href="./pages/how-it-works.html">How It Works</a><a href="./pages/players.html">For Players</a><a href="./pages/organizers.html">For Organizers</a><a href="./pages/leaderboard.html">Leaderboard</a><a href="./pages/winners.html">Winners</a><a href="./pages/support.html">Support</a>
+    <h2>Account</h2><a href="./pages/account/login.html" data-auth-guest>Login</a><a href="./pages/account/signup.html" data-auth-guest>Sign Up</a><a href="./pages/account/profile.html">My Profile</a><a href="./pages/account/my-tournaments.html">My Tournaments</a><a href="./pages/account/participation-codes.html">My Participation Codes</a><a href="./pages/account/my-results.html">My Results</a><a href="./pages/account/my-winnings.html">My Winnings</a>
+    <h2>More</h2><a href="./pages/more/search.html">Search</a><a href="./pages/more/notifications.html">Notifications</a><a href="./pages/more/settings.html">Settings</a><a href="./pages/more/contact.html">Contact Us</a><a href="./pages/more/help.html">Help Center</a><a href="./pages/more/faq.html">FAQ</a><a href="./pages/more/report-issue.html">Report an Issue</a><a href="./pages/more/about.html">About GULU TOURNEX</a>
+    <h2>Legal</h2><a href="./pages/legal/terms.html">Terms &amp; Conditions</a><a href="./pages/legal/privacy.html">Privacy Policy</a><a href="./pages/legal/refund-policy.html">Refund Policy</a><a href="./pages/legal/community-guidelines.html">Community Guidelines</a>
+  </nav>
+  <p class="drawer-note">Account sign-in is being configured; tournament actions remain a frontend preview.</p>
+</aside>
+<main id="main-content">
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> A platform for gaming tournaments</div>
+          <h1>Your next tournament <span>starts here.</span></h1>
+          <p class="hero-copy">GULU TOURNEX helps players discover gaming tournaments and gives organizers a place to present them. Compare the format, rules, schedule and venue, then find the competition that is right for you.</p>
+          <div class="hero-actions">
+            <a class="button" href="#tournaments">Explore Tournaments <span aria-hidden="true">↘</span></a>
+            <a class="button secondary" href="#organizers">Host a Tournament</a>
+          </div>
+          <div class="hero-note"><span class="hero-note-mark" aria-hidden="true">✦</span> Online discovery. Offline competition.</div>
+        </div>
+
+        <aside class="tournament-preview" aria-label="Sample tournament preview">
+          <div class="preview-art">
+            <span class="preview-symbol" aria-hidden="true">✳</span>
+            <div class="preview-label"><small>GULU TOURNEX · TOURNAMENT PREVIEW</small><strong>Ready for the arena?</strong></div>
+          </div>
+          <div class="preview-content">
+            <div class="preview-topline"><span class="section-kicker">Tournament format</span><span class="preview-tag">SAMPLE TOURNAMENT</span></div>
+            <h2>Weekend Showdown</h2>
+            <p class="preview-description">Sample content showing how a tournament listing could look.</p>
+            <div class="preview-meta">
+              <div><span>Format</span><strong>Offline tournament</strong></div>
+              <div><span>Tournament details</span><strong>Coming soon</strong></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="tournaments">
+      <div class="container">
+        <div class="section-heading">
+          <div><div class="section-kicker">Discover</div><h2>Featured Tournaments</h2></div>
+          <p>These sample tournaments preview how listings could appear. Schedules and registration are not available in this demo.</p>
+        </div>
+        <div class="tournament-grid">
+          <article class="tournament-card">
+            <div class="card-top"><span class="game-mark" aria-hidden="true">S</span><span class="sample-label">Sample tournament</span></div>
+            <h3>Squad Showdown</h3>
+            <p>Sample team tournament · Format and rules shown as a preview.</p>
+            <a class="card-link" href="#how-it-works">How tournaments work <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="tournament-card">
+            <div class="card-top"><span class="game-mark" aria-hidden="true">A</span><span class="sample-label">Sample tournament</span></div>
+            <h3>Solo Arena</h3>
+            <p>Sample solo tournament · Schedule and venue details are not live.</p>
+            <a class="card-link" href="#how-it-works">How tournaments work <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="tournament-card">
+            <div class="card-top"><span class="game-mark" aria-hidden="true">C</span><span class="sample-label">Sample tournament</span></div>
+            <h3>Campus Clash</h3>
+            <p>Sample community tournament · Schedule and venue details are not live.</p>
+            <a class="card-link" href="#organizers">For tournament organizers <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <div class="container">
+        <div class="section-heading">
+          <div><div class="section-kicker">The player journey</div><h2>How It Works</h2></div>
+          <p>A simple player journey: discover a tournament, understand the details and arrive ready to compete.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><span class="step-number">01 / DISCOVER</span><h3>Find a tournament</h3><p>Browse tournament listings and find a competition that fits your game and style.</p></article>
+          <article class="step"><span class="step-number">02 / REVIEW</span><h3>Know the details</h3><p>Review the tournament format, schedule, rules and venue information.</p></article>
+          <article class="step"><span class="step-number">03 / COMPETE</span><h3>Show up ready</h3><p>Meet the players, enjoy the tournament and give it your best.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="for-players" aria-labelledby="players-title">
+      <div class="container">
+        <div class="section-heading">
+          <div><div class="section-kicker">For Players</div><h2 id="players-title">Your tournament home base.</h2></div>
+          <p>Future player tools, shown here as previews. Accounts and saved tournament information are not active in this demo.</p>
+        </div>
+        <div class="player-preview-grid">
+          <article class="preview-feature" id="my-tournaments"><span class="preview-status">Demo preview</span><h3>My Tournaments</h3><p>A place to see upcoming and completed tournaments.</p></article>
+          <article class="preview-feature" id="my-participation-codes"><span class="preview-status">Demo preview</span><h3>My Participation Codes</h3><p>Participation details could live alongside each tournament.</p></article>
+          <article class="preview-feature" id="my-results"><span class="preview-status">Demo preview</span><h3>My Results</h3><p>Review tournament placements and results in one place.</p></article>
+          <article class="preview-feature" id="my-winnings"><span class="preview-status">Demo preview</span><h3>My Winnings</h3><p>A future overview for tournament prize information.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="community-title">
+      <div class="container">
+        <div class="section-heading">
+          <div><div class="section-kicker">Community</div><h2 id="community-title">Competition worth following.</h2></div>
+          <p>Rankings and winner highlights are preview destinations. No live scores or results are connected.</p>
+        </div>
+        <div class="community-preview-grid">
+          <article class="community-card" id="leaderboard">
+            <span class="sample-label">Demo preview</span>
+            <h3>Leaderboard</h3>
+            <p>Follow tournament standings and player rankings when this area becomes available.</p>
+          </article>
+          <article class="community-card" id="winners">
+            <span class="sample-label">Demo preview</span>
+            <h3>Winners</h3>
+            <p>Celebrate tournament winners and highlights in a future version of GULU TOURNEX.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="container" id="organizers">
+      <div class="organizer-panel">
+        <div><div class="section-kicker">For Organizers</div><h2>Host a Tournament. Reach your players.</h2><p>Share your tournament format, rules, schedule and venue in one clear listing. Organizer submissions are not enabled in this demo; this section previews how TOURNEX can support tournament hosts.</p></div>
+        <span class="sample-label">Organizer tools coming soon</span>
+      </div>
+      <div class="organizer-preview-grid" aria-label="Organizer feature previews">
+        <article class="preview-feature" id="organizer-host"><span class="preview-status">Demo preview</span><h3>Host a Tournament</h3><p>Share tournament information with players.</p></article>
+        <article class="preview-feature" id="organizer-dashboard"><span class="preview-status">Demo preview</span><h3>Organizer Dashboard</h3><p>A future home for organizer tools and updates.</p></article>
+        <article class="preview-feature" id="manage-tournaments"><span class="preview-status">Demo preview</span><h3>Manage Tournaments</h3><p>Keep tournament details together in one place.</p></article>
+        <article class="preview-feature" id="organizer-participants"><span class="preview-status">Demo preview</span><h3>Participants</h3><p>Participant information and tournament rosters.</p></article>
+        <article class="preview-feature" id="organizer-verification"><span class="preview-status">Demo preview</span><h3>Verification</h3><p>Future check-in and participation tools.</p></article>
+        <article class="preview-feature" id="organizer-earnings"><span class="preview-status">Demo preview</span><h3>Earnings</h3><p>A future overview for organizer earnings.</p></article>
+        <article class="preview-feature" id="organizer-guidelines"><span class="preview-status">Demo preview</span><h3>Organizer Guidelines</h3><p>Clear guidance for listing a tournament.</p></article>
+      </div>
+    </section>
+
+    <section class="container faq-section" id="support" aria-labelledby="faq-title">
+      <div class="section-heading"><div><div class="section-kicker">Questions</div><h2 id="faq-title">Frequently asked</h2></div></div>
+      <div class="faq-list">
+        <details>
+          <summary>What is GULU TOURNEX?</summary>
+          <p>GULU TOURNEX is a website concept for discovering gaming tournaments and helping organizers share tournament details with players.</p>
+        </details>
+        <details>
+          <summary>Can I register or host a tournament here?</summary>
+          <p>Not yet. The featured tournament cards are samples, and registration and organizer submissions are not enabled in this demo.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+<footer class="platform-footer"><div class="footer-inner"><a class="platform-brand" href="./index.html"><span class="brand-symbol">GT</span><span><strong>GULU TOURNEX</strong><small>PLAY. COMPETE. CONNECT.</small></span></a><p>A tournament platform concept for players and organizers.</p><nav aria-label="Footer navigation"><a href="./pages/tournaments.html">Tournaments</a><a href="./pages/support.html">Support</a><a href="./pages/more/about.html">About</a><a href="./pages/legal/terms.html">Terms</a><a href="./pages/legal/privacy.html">Privacy</a></nav><small>© 2026 GULU TOURNEX · Frontend demo</small></div></footer>
+<div class="demo-toast" id="demo-toast" role="status" aria-live="polite" hidden></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script><script src="./scripts/auth-config.js" defer></script><script src="./scripts/script.js" defer></script><script src="./scripts/auth.js" defer></script>
+</body></html>

@@ -1,0 +1,107 @@
+/* Help and contact surfaces */
+.page-support .page-hero,
+.page-more-help .page-hero,
+.page-more-contact .page-hero,
+.page-more-faq .page-hero,
+.page-more-report-issue .page-hero {
+  background:
+    radial-gradient(ellipse at 84% 12%, rgba(120, 177, 82, 0.16), transparent 28rem),
+    linear-gradient(135deg, #0e2116, #09160f 68%);
+}
+
+.page-support .demo-form,
+.page-more-contact .demo-form,
+.page-more-report-issue .demo-form {
+  width: min(100%, 800px);
+}
+
+.page-support .demo-form button,
+.page-more-contact .demo-form button,
+.page-more-report-issue .demo-form button {
+  min-width: 160px;
+}
+
+.page-support .content-heading + .feature-grid .feature-card,
+.page-more-help .content-heading + .feature-grid .feature-card {
+  min-height: 150px;
+}
+
+.page-support .faq-list {
+  max-width: 850px;
+}
+
+.page-more-faq .faq-list {
+  width: min(100%, 900px);
+}
+
+.page-more-contact .form-grid label:first-child,
+.page-more-report-issue .form-grid label:first-child {
+  min-width: 0;
+}
+
+@media (max-width: 700px) {
+  .page-support .demo-form button,
+  .page-more-contact .demo-form button,
+  .page-more-report-issue .demo-form button {
+    width: 100%;
+  }
+}
+
+
+/* Support routes: calm console lighting, with a distinct mood per destination */
+body.page-support {
+  background-color: #050d09;
+  background-image:
+    radial-gradient(circle at 88% 22%, rgba(98, 179, 100, 0.13), transparent 19rem),
+    radial-gradient(circle at 12% 79%, rgba(194, 240, 75, 0.065), transparent 24rem),
+    #050d09;
+}
+.page-support .page-hero {
+  background:
+    radial-gradient(circle at 86% 26%, transparent 0 3.5rem, rgba(194, 240, 75, 0.1) 3.55rem 3.6rem, transparent 3.7rem 6rem, rgba(194, 240, 75, 0.045) 6.05rem 6.1rem, transparent 6.2rem),
+    linear-gradient(135deg, #102419, #08140d 72%);
+}
+body.page-more-help {
+  background-image:
+    radial-gradient(ellipse at 18% 24%, rgba(97, 172, 87, 0.15), transparent 22rem),
+    radial-gradient(ellipse at 90% 85%, rgba(194, 240, 75, 0.07), transparent 24rem),
+    #050d09;
+}
+.page-more-help .page-hero { background: radial-gradient(circle at 82% 26%, rgba(194,240,75,.13), transparent 16rem), linear-gradient(135deg,#11271a,#08140d 72%); }
+body.page-more-faq {
+  background-image:
+    radial-gradient(circle at 84% 16%, rgba(194, 240, 75, 0.1), transparent 18rem),
+    repeating-linear-gradient(0deg, transparent 0 66px, rgba(194, 240, 75, 0.018) 67px),
+    #050d09;
+}
+.page-more-faq .page-hero { background: radial-gradient(ellipse at 86% 12%, rgba(194,240,75,.14), transparent 20rem), linear-gradient(135deg,#102218,#08130d 72%); }
+body.page-more-contact {
+  background-image:
+    radial-gradient(ellipse at 12% 26%, rgba(74, 156, 106, 0.16), transparent 20rem),
+    radial-gradient(ellipse at 90% 70%, rgba(194, 240, 75, 0.07), transparent 24rem),
+    #050d09;
+}
+.page-more-contact .page-hero { background: linear-gradient(115deg, rgba(194,240,75,.04), transparent 42%), radial-gradient(ellipse at 83% 14%, rgba(76,166,110,.17), transparent 23rem), linear-gradient(135deg,#10241c,#08140e 72%); }
+body.page-more-report-issue {
+  background-image:
+    radial-gradient(circle at 88% 16%, rgba(211, 160, 77, 0.12), transparent 18rem),
+    radial-gradient(ellipse at 10% 85%, rgba(194, 240, 75, 0.06), transparent 22rem),
+    #070d09;
+}
+.page-more-report-issue .page-hero { background: radial-gradient(circle at 86% 20%, rgba(190,151,72,.13), transparent 17rem), linear-gradient(135deg,#1a2116,#09140d 72%); }
+
+
+body.page-support { --gt-rgb-a: rgba(0, 220, 255, 0.05); --gt-rgb-b: rgba(74, 102, 255, 0.05); --gt-rgb-c: rgba(112, 218, 134, 0.055); }
+body.page-more-help { --gt-rgb-a: rgba(72, 230, 255, 0.055); --gt-rgb-b: rgba(63, 122, 255, 0.045); --gt-rgb-c: rgba(116, 226, 118, 0.05); }
+body.page-more-faq { --gt-rgb-a: rgba(0, 216, 255, 0.05); --gt-rgb-b: rgba(164, 75, 255, 0.055); --gt-rgb-c: rgba(194, 240, 75, 0.04); }
+body.page-more-contact { --gt-rgb-a: rgba(0, 239, 220, 0.055); --gt-rgb-b: rgba(51, 116, 255, 0.05); --gt-rgb-c: rgba(109, 221, 147, 0.055); }
+body.page-more-report-issue { --gt-rgb-a: rgba(255, 109, 62, 0.035); --gt-rgb-b: rgba(149, 76, 255, 0.045); --gt-rgb-c: rgba(194, 240, 75, 0.045); }
+
+
+
+/* Brighter route palette: this page now carries its own RGB light. */
+body.page-support { --gt-page-accent: #39dfff; --gt-page-accent-2: #6881ff; --gt-rgb-a: rgba(0, 205, 255, 0.22); --gt-rgb-b: rgba(71, 98, 255, 0.19); --gt-rgb-c: rgba(0, 225, 195, 0.12); }
+body.page-more-help { --gt-page-accent: #42dfcf; --gt-page-accent-2: #4a9dff; --gt-rgb-a: rgba(0, 216, 197, 0.22); --gt-rgb-b: rgba(52, 133, 255, 0.19); --gt-rgb-c: rgba(133, 82, 255, 0.12); }
+body.page-more-faq { --gt-page-accent: #a77bff; --gt-page-accent-2: #35d9ff; --gt-rgb-a: rgba(145, 80, 255, 0.23); --gt-rgb-b: rgba(0, 208, 255, 0.18); --gt-rgb-c: rgba(255, 59, 188, 0.12); }
+body.page-more-contact { --gt-page-accent: #35e4d0; --gt-page-accent-2: #38bfff; --gt-rgb-a: rgba(0, 221, 202, 0.22); --gt-rgb-b: rgba(31, 168, 255, 0.18); --gt-rgb-c: rgba(123, 82, 255, 0.12); }
+body.page-more-report-issue { --gt-page-accent: #ff9c55; --gt-page-accent-2: #a979ff; --gt-rgb-a: rgba(255, 131, 67, 0.22); --gt-rgb-b: rgba(136, 78, 255, 0.19); --gt-rgb-c: rgba(255, 65, 122, 0.12); }

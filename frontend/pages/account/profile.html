@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="A preview of the profile area where a player could keep their tournament activity."><title>My Profile | GULU TOURNEX</title><link rel="stylesheet" href="../../styles/style.css"><link rel="stylesheet" href="../../styles/pages/account.css"></head>
+<body class="page-account-profile">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="platform-header">
+  <div class="platform-header-inner">
+    <button class="sidebar-toggle" type="button" aria-label="Open site menu" aria-expanded="false" aria-controls="site-drawer" data-drawer-open><span aria-hidden="true">☰</span></button>
+    <a class="platform-brand" href="../../index.html" aria-label="GULU TOURNEX home"><span class="brand-symbol">GT</span><span><strong>GULU TOURNEX</strong><small>PLAY. COMPETE. CONNECT.</small></span></a>
+    <nav class="platform-nav" aria-label="Main navigation">
+      <a href="../tournaments.html">Tournaments</a><a href="../how-it-works.html">How It Works</a><a href="../players.html">For Players</a><a href="../organizers.html">For Organizers</a><a href="../leaderboard.html">Leaderboard</a><a href="../winners.html">Winners</a><a href="../support.html">Support</a>
+    </nav>
+    <div class="header-actions"><a class="search-link" href="../more/search.html" aria-label="Search tournaments">⌕<span>Search</span></a><a class="login-link" data-auth-guest href="./login.html">Login</a><a class="signup-link" data-auth-guest href="./signup.html">Sign Up</a><a class="profile-link" data-auth-user hidden href="profile.html"><span data-auth-username>My profile</span></a><button class="logout-link" type="button" data-auth-user data-auth-logout hidden>Log out</button><a class="host-link" href="../organizers.html">Host a Tournament</a></div>
+  </div>
+</header>
+<div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+<aside class="site-drawer" id="site-drawer" aria-label="Site navigation" aria-hidden="true" inert>
+  <div class="drawer-top"><a class="platform-brand" href="../../index.html"><span class="brand-symbol">GT</span><span><strong>GULU TOURNEX</strong><small>PLAY. COMPETE. CONNECT.</small></span></a><button class="drawer-close" type="button" aria-label="Close site menu">×</button></div>
+  <nav class="drawer-nav">
+    <h2>Menu</h2><a href="../../index.html">Home</a><a href="../tournaments.html">Tournaments</a><a href="../how-it-works.html">How It Works</a><a href="../players.html">For Players</a><a href="../organizers.html">For Organizers</a><a href="../leaderboard.html">Leaderboard</a><a href="../winners.html">Winners</a><a href="../support.html">Support</a>
+    <h2>Account</h2><a href="./login.html" data-auth-guest>Login</a><a href="./signup.html" data-auth-guest>Sign Up</a><a href="./profile.html">My Profile</a><a href="./my-tournaments.html">My Tournaments</a><a href="./participation-codes.html">My Participation Codes</a><a href="./my-results.html">My Results</a><a href="./my-winnings.html">My Winnings</a>
+    <h2>More</h2><a href="../more/search.html">Search</a><a href="../more/notifications.html">Notifications</a><a href="../more/settings.html">Settings</a><a href="../more/contact.html">Contact Us</a><a href="../more/help.html">Help Center</a><a href="../more/faq.html">FAQ</a><a href="../more/report-issue.html">Report an Issue</a><a href="../more/about.html">About GULU TOURNEX</a>
+    <h2>Legal</h2><a href="../legal/terms.html">Terms &amp; Conditions</a><a href="../legal/privacy.html">Privacy Policy</a><a href="../legal/refund-policy.html">Refund Policy</a><a href="../legal/community-guidelines.html">Community Guidelines</a>
+  </nav>
+  <p class="drawer-note">Account sign-in is being configured; tournament actions remain a frontend preview.</p>
+</aside>
+<main class="page-main" id="main-content">
+  <section class="page-hero auth-hero"><div class="page-hero-inner"><p class="page-kicker">PLAYER PROFILE</p><h1>Your GULU TOURNEX profile</h1><p>Your account identity and unique player username.</p></div></section>
+  <div class="page-content auth-content">
+    <div class="auth-status" data-auth-status role="status" aria-live="polite" hidden></div>
+    <section class="profile-overview"><div class="profile-avatar" data-profile-avatar aria-hidden="true">G</div><div class="profile-details"><p class="page-kicker">PLAYER</p><h2 data-profile-name>Loading your profile…</h2><p class="profile-handle">@<span data-profile-username>Loading</span></p><p class="profile-email" data-profile-email></p></div><span class="status-pill">Signed in</span></section>
+    <section class="auth-panel profile-username-editor" aria-labelledby="profile-username-title">
+      <div class="auth-panel-heading"><h2 id="profile-username-title">Change your username</h2><p>Your public handle must stay unique. Your previous username may become available to another player.</p></div>
+      <form class="demo-form auth-form" data-username-form>
+        <label for="profile-username-input">New username</label>
+        <div class="username-field"><span aria-hidden="true">@</span><input id="profile-username-input" data-profile-username-input name="username" type="text" minlength="3" maxlength="20" pattern="[a-z0-9_]{3,20}" autocomplete="username" autocapitalize="none" spellcheck="false" aria-describedby="profile-username-rules profile-username-availability" required></div>
+        <p id="profile-username-rules" class="muted-copy">Use 3–20 lowercase letters, numbers, or underscores.</p>
+        <p id="profile-username-availability" class="auth-status username-status" data-username-status aria-live="polite">Type a username to check availability.</p>
+        <button class="button-primary auth-submit" type="submit">Save username</button>
+      </form>
+    </section>    <section class="page-section"><div class="content-heading"><h2>Your player area</h2><p>Tournament records shown here are still demo previews.</p></div><div class="feature-grid"><a class="feature-card feature-card-link" href="./my-tournaments.html"><span class="card-tag">PLAYER AREA</span><h3>My tournaments</h3><p>Preview your future tournament list.</p></a><a class="feature-card feature-card-link" href="./my-results.html"><span class="card-tag">PLAYER AREA</span><h3>My results</h3><p>See how sample placements could be presented.</p></a><a class="feature-card feature-card-link" href="./participation-codes.html"><span class="card-tag">PLAYER AREA</span><h3>Participation codes</h3><p>Sample entry-pass layout; not valid for real events.</p></a></div></section>
+    <button class="button-secondary profile-logout" type="button" data-auth-logout>Log out</button>
+  </div>
+</main>
+<footer class="platform-footer"><div class="footer-inner"><a class="platform-brand" href="../../index.html"><span class="brand-symbol">GT</span><span><strong>GULU TOURNEX</strong><small>PLAY. COMPETE. CONNECT.</small></span></a><p>A tournament platform concept for players and organizers.</p><nav aria-label="Footer navigation"><a href="../tournaments.html">Tournaments</a><a href="../support.html">Support</a><a href="../more/about.html">About</a><a href="../legal/terms.html">Terms</a><a href="../legal/privacy.html">Privacy</a></nav><small>© 2026 GULU TOURNEX · Frontend demo</small></div></footer>
+<div class="demo-toast" id="demo-toast" role="status" aria-live="polite" hidden></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script><script src="../../scripts/auth-config.js" defer></script><script src="../../scripts/script.js" defer></script><script src="../../scripts/auth.js" defer></script>
+</body></html>
